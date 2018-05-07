@@ -3,3 +3,4 @@ target/
 myspringboot.iml
 LOG_PATH_IS_UNDEFINED/error.log
 LOG_PATH_IS_UNDEFINED/info.log
+*.0
