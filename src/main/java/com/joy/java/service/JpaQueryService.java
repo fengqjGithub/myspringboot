@@ -2,9 +2,9 @@ package com.joy.java.service;
 
 import com.alibaba.fastjson.JSON;
 import com.joy.java.bean.BkksBean;
+import com.joy.java.bean.TestBean;
 import com.joy.java.dao.*;
 import com.joy.java.entity.BasisMemberEn;
-import com.joy.java.bean.TestBean;
 import com.joy.java.entity.TjsjTjdierjbEn;
 import com.joy.java.entity.TjsjTjdisanjbEn;
 import com.joy.java.util.lang.JSONUtils;
@@ -27,7 +27,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

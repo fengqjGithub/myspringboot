@@ -1,4 +1,4 @@
-package com.joy.java.util.MyDBFUtil;
+package com.joy.java.util.mydbfutil;
 
 
 

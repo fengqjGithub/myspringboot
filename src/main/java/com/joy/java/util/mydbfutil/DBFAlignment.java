@@ -17,7 +17,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-package com.joy.java.util.MyDBFUtil;
+package com.joy.java.util.mydbfutil;
 
 
 /**
