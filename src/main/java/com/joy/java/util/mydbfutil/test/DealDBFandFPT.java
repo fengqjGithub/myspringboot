@@ -15,7 +15,7 @@ import java.util.Map;
  * @Date: 2018-02-27 11:47
  * @Description: TODO
  **/
-public class ImportBaseDataController {
+public class DealDBFandFPT {
     /**
      * DBFFilePath "DBF文件路径",
      * FPTFilePath "FPT文件路径"
