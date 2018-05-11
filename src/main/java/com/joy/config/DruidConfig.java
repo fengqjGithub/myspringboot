@@ -17,10 +17,16 @@ import org.springframework.context.annotation.DependsOn;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-
 /**
- * Created by arnold.zhu on 6/13/2017.
- */
+ * @Package: com.joy.config
+ * @Class: DruidConfig
+ * @Author: 冯前进
+ * @date: 2018/5/9 17:45
+ * @Description: TODO
+ * @Param: param
+ * @ReturnType: 
+ * @Exception   
+ **/
 @Configuration
 public class DruidConfig {
 
@@ -132,6 +138,7 @@ public class DruidConfig {
         try {
             datasource.setFilters(filters);
         } catch (SQLException e) {
+            e.printStackTrace();
             logger.error("druid configuration initialization filter", e);
         }
         return datasource;

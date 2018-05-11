@@ -1,5 +1,8 @@
 package com.joy.java.util.io;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -12,8 +15,7 @@ import java.util.zip.GZIPOutputStream;
  * Created by jing on 6/30/16.
  */
 public class GzipUtils {
-    private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(GzipUtils.class);
-
+    private static Logger logger = LoggerFactory.getLogger(GzipUtils.class);
     /**
      * gzip压缩
      * @param str

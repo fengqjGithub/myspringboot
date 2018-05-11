@@ -1,5 +1,8 @@
 package com.joy.java.util.os;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,8 +13,7 @@ import java.net.NetworkInterface;
  * 获取系统的mac地址
  */
 public class MacUtils {
-	private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(MacUtils.class);
-
+	private static Logger logger = LoggerFactory.getLogger(MacUtils.class);
 	/**
 	 * 获取当前操作系统名称. return 操作系统名称 例如:windows,Linux,Unix等.
 	 */

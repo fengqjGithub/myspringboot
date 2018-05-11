@@ -6,7 +6,8 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
 import org.apache.commons.compress.archivers.zip.ZipFile;
 import org.apache.commons.compress.utils.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
  * Zip压缩综合类，依赖于commons-compress-1.5.jar。
  */
 public class ZipUtil {
-	private  static Logger log = Logger.getLogger(ZipUtil.class);
+	private static Logger log = LoggerFactory.getLogger(ZipUtil.class);
 //	public static void main(String[] args){
 //		try {
 //			//new ZipUtil().decompressZip(new File("d://img.zip"),"img/pic201300006.jpg","d://");

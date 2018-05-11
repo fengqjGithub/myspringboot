@@ -2,7 +2,8 @@ package com.joy.java.util.io;
 
 import com.joy.java.util.lang.ConvertUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
@@ -13,7 +14,7 @@ import java.nio.channels.FileChannel;
 public class FileUtil {
     private static final String FOLDER_SEPARATOR = "/";
     private static final char EXTENSION_SEPARATOR = '.';
-    private static Logger log = Logger.getLogger(FileUtil.class);
+    private static Logger log = LoggerFactory.getLogger(FileUtil.class);
 
     /**
      * 获取文件头

@@ -1,7 +1,8 @@
 package com.joy.java.util.lang;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.stream.FileImageInputStream;
 import javax.imageio.stream.FileImageOutputStream;
@@ -24,7 +25,7 @@ import java.util.regex.Pattern;
  * @Exception
  **/
 public class MyStringUtil extends StringUtils {
-    private static Logger log = Logger.getLogger(MyStringUtil.class);
+    private static Logger log = LoggerFactory.getLogger(MyStringUtil.class);
     /**
      * 实体类对象转换成Map
      * @param obj
