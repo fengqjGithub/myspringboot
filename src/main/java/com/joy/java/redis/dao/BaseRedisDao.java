@@ -9,8 +9,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * @Project: myspringbootlearning
- * @Package: com.joy.java.redis.dao
+ * @Project: myspringboot
+ * @Package: com.joy.java.redis.jpadao
  * @Author: 冯前进
  * @Date: 2018-05-11 15:02
  * @Description: TODO

@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.connection.DataType;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
@@ -16,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 /**
- * @Project: myspringbootlearning
+ * @Project: myspringboot
  * @Package: com.joy.java.redis.daoImpl
  * @Author: 冯前进
  * @Date: 2018-05-11 15:04
@@ -384,7 +383,6 @@ public class RedisHandle implements BaseRedisDao<String, Object> {
     }
 
     public Object get(String key) {
-//        redisTemplate.setValueSerializer(new StringRedisSerializer());
         return redisTemplate.boundValueOps(key).get();
     }
 
