@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @Package: com.joy.java.jpa.jpaentity
  * @Class: TjsjTjdisanjbEn
  * @Author: 冯前进
- * @date: 2018/5/15 15:08
+ * @date: 2018/5/15 15:15
  * @Description: TODO
  * @Param: param
  * @ReturnType: 

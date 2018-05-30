@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 /**
- * 五种查询方式涵盖了spring-data-jpa的大部分基础查询，可扩展性强，能满足大部分项目查询需求
+ * 五种查询方式涵盖了spring-data-jpa的大部分基础查询，
+ * 可扩展性强，能满足大部分项目查询需求
  * by冯前进
  */
 @RestController

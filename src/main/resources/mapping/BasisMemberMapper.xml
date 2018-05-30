@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joy.mybatis.mapper.BasisMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.joy.mybatis.model.BasisMember" >
+    <id column="memberid" property="memberid" jdbcType="INTEGER" />
+    <result column="member_structid" property="memberStructid" jdbcType="INTEGER" />
+    <result column="member_parttypeid" property="memberParttypeid" jdbcType="INTEGER" />
+    <result column="member_no" property="memberNo" jdbcType="VARCHAR" />
+    <result column="member_alias" property="memberAlias" jdbcType="VARCHAR" />
+    <result column="member_mc" property="memberMc" jdbcType="VARCHAR" />
+    <result column="member_pwd" property="memberPwd" jdbcType="VARCHAR" />
+    <result column="member_pwd_request" property="memberPwdRequest" jdbcType="INTEGER" />
+    <result column="member_pwd_reject" property="memberPwdReject" jdbcType="INTEGER" />
+    <result column="member_pass_alltime" property="memberPassAlltime" jdbcType="INTEGER" />
+    <result column="member_stop" property="memberStop" jdbcType="INTEGER" />
+    <result column="member_time" property="memberTime" jdbcType="TIMESTAMP" />
+    <result column="member_del" property="memberDel" jdbcType="INTEGER" />
+    <result column="member_usbkey" property="memberUsbkey" jdbcType="INTEGER" />
+    <result column="member_serialnumber" property="memberSerialnumber" jdbcType="VARCHAR" />
+    <result column="member_xm" property="memberXm" jdbcType="VARCHAR" />
+    <result column="member_zjno" property="memberZjno" jdbcType="VARCHAR" />
+    <result column="member_email" property="memberEmail" jdbcType="VARCHAR" />
+    <result column="member_gzdw" property="memberGzdw" jdbcType="VARCHAR" />
+    <result column="member_address" property="memberAddress" jdbcType="VARCHAR" />
+    <result column="member_phone" property="memberPhone" jdbcType="VARCHAR" />
+    <result column="member_online" property="memberOnline" jdbcType="INTEGER" />
+    <result column="member_logintime" property="memberLogintime" jdbcType="TIMESTAMP" />
+    <result column="member_loginip" property="memberLoginip" jdbcType="VARCHAR" />
+    <result column="member_parameters" property="memberParameters" jdbcType="VARCHAR" />
+    <result column="member_order" property="memberOrder" jdbcType="INTEGER" />
+    <result column="member_bz" property="memberBz" jdbcType="VARCHAR" />
+    <result column="member_pc" property="memberPc" jdbcType="VARCHAR" />
+    <result column="member_yhpcid" property="memberYhpcid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    memberid, member_structid, member_parttypeid, member_no, member_alias, member_mc, 
+    member_pwd, member_pwd_request, member_pwd_reject, member_pass_alltime, member_stop, 
+    member_time, member_del, member_usbkey, member_serialnumber, member_xm, member_zjno, 
+    member_email, member_gzdw, member_address, member_phone, member_online, member_logintime, 
+    member_loginip, member_parameters, member_order, member_bz, member_pc, member_yhpcid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from basis_member
+    where memberid = #{memberid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from basis_member
+    where memberid = #{memberid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.joy.mybatis.model.BasisMember" >
+    insert into basis_member (memberid, member_structid, member_parttypeid, 
+      member_no, member_alias, member_mc, 
+      member_pwd, member_pwd_request, member_pwd_reject, 
+      member_pass_alltime, member_stop, member_time, 
+      member_del, member_usbkey, member_serialnumber, 
+      member_xm, member_zjno, member_email, 
+      member_gzdw, member_address, member_phone, 
+      member_online, member_logintime, member_loginip, 
+      member_parameters, member_order, member_bz, 
+      member_pc, member_yhpcid)
+    values (#{memberid,jdbcType=INTEGER}, #{memberStructid,jdbcType=INTEGER}, #{memberParttypeid,jdbcType=INTEGER}, 
+      #{memberNo,jdbcType=VARCHAR}, #{memberAlias,jdbcType=VARCHAR}, #{memberMc,jdbcType=VARCHAR}, 
+      #{memberPwd,jdbcType=VARCHAR}, #{memberPwdRequest,jdbcType=INTEGER}, #{memberPwdReject,jdbcType=INTEGER}, 
+      #{memberPassAlltime,jdbcType=INTEGER}, #{memberStop,jdbcType=INTEGER}, #{memberTime,jdbcType=TIMESTAMP}, 
+      #{memberDel,jdbcType=INTEGER}, #{memberUsbkey,jdbcType=INTEGER}, #{memberSerialnumber,jdbcType=VARCHAR}, 
+      #{memberXm,jdbcType=VARCHAR}, #{memberZjno,jdbcType=VARCHAR}, #{memberEmail,jdbcType=VARCHAR}, 
+      #{memberGzdw,jdbcType=VARCHAR}, #{memberAddress,jdbcType=VARCHAR}, #{memberPhone,jdbcType=VARCHAR}, 
+      #{memberOnline,jdbcType=INTEGER}, #{memberLogintime,jdbcType=TIMESTAMP}, #{memberLoginip,jdbcType=VARCHAR}, 
+      #{memberParameters,jdbcType=VARCHAR}, #{memberOrder,jdbcType=INTEGER}, #{memberBz,jdbcType=VARCHAR}, 
+      #{memberPc,jdbcType=VARCHAR}, #{memberYhpcid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.joy.mybatis.model.BasisMember" >
+    insert into basis_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="memberid != null" >
+        memberid,
+      </if>
+      <if test="memberStructid != null" >
+        member_structid,
+      </if>
+      <if test="memberParttypeid != null" >
+        member_parttypeid,
+      </if>
+      <if test="memberNo != null" >
+        member_no,
+      </if>
+      <if test="memberAlias != null" >
+        member_alias,
+      </if>
+      <if test="memberMc != null" >
+        member_mc,
+      </if>
+      <if test="memberPwd != null" >
+        member_pwd,
+      </if>
+      <if test="memberPwdRequest != null" >
+        member_pwd_request,
+      </if>
+      <if test="memberPwdReject != null" >
+        member_pwd_reject,
+      </if>
+      <if test="memberPassAlltime != null" >
+        member_pass_alltime,
+      </if>
+      <if test="memberStop != null" >
+        member_stop,
+      </if>
+      <if test="memberTime != null" >
+        member_time,
+      </if>
+      <if test="memberDel != null" >
+        member_del,
+      </if>
+      <if test="memberUsbkey != null" >
+        member_usbkey,
+      </if>
+      <if test="memberSerialnumber != null" >
+        member_serialnumber,
+      </if>
+      <if test="memberXm != null" >
+        member_xm,
+      </if>
+      <if test="memberZjno != null" >
+        member_zjno,
+      </if>
+      <if test="memberEmail != null" >
+        member_email,
+      </if>
+      <if test="memberGzdw != null" >
+        member_gzdw,
+      </if>
+      <if test="memberAddress != null" >
+        member_address,
+      </if>
+      <if test="memberPhone != null" >
+        member_phone,
+      </if>
+      <if test="memberOnline != null" >
+        member_online,
+      </if>
+      <if test="memberLogintime != null" >
+        member_logintime,
+      </if>
+      <if test="memberLoginip != null" >
+        member_loginip,
+      </if>
+      <if test="memberParameters != null" >
+        member_parameters,
+      </if>
+      <if test="memberOrder != null" >
+        member_order,
+      </if>
+      <if test="memberBz != null" >
+        member_bz,
+      </if>
+      <if test="memberPc != null" >
+        member_pc,
+      </if>
+      <if test="memberYhpcid != null" >
+        member_yhpcid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="memberid != null" >
+        #{memberid,jdbcType=INTEGER},
+      </if>
+      <if test="memberStructid != null" >
+        #{memberStructid,jdbcType=INTEGER},
+      </if>
+      <if test="memberParttypeid != null" >
+        #{memberParttypeid,jdbcType=INTEGER},
+      </if>
+      <if test="memberNo != null" >
+        #{memberNo,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAlias != null" >
+        #{memberAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="memberMc != null" >
+        #{memberMc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwd != null" >
+        #{memberPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwdRequest != null" >
+        #{memberPwdRequest,jdbcType=INTEGER},
+      </if>
+      <if test="memberPwdReject != null" >
+        #{memberPwdReject,jdbcType=INTEGER},
+      </if>
+      <if test="memberPassAlltime != null" >
+        #{memberPassAlltime,jdbcType=INTEGER},
+      </if>
+      <if test="memberStop != null" >
+        #{memberStop,jdbcType=INTEGER},
+      </if>
+      <if test="memberTime != null" >
+        #{memberTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memberDel != null" >
+        #{memberDel,jdbcType=INTEGER},
+      </if>
+      <if test="memberUsbkey != null" >
+        #{memberUsbkey,jdbcType=INTEGER},
+      </if>
+      <if test="memberSerialnumber != null" >
+        #{memberSerialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="memberXm != null" >
+        #{memberXm,jdbcType=VARCHAR},
+      </if>
+      <if test="memberZjno != null" >
+        #{memberZjno,jdbcType=VARCHAR},
+      </if>
+      <if test="memberEmail != null" >
+        #{memberEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="memberGzdw != null" >
+        #{memberGzdw,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAddress != null" >
+        #{memberAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null" >
+        #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="memberOnline != null" >
+        #{memberOnline,jdbcType=INTEGER},
+      </if>
+      <if test="memberLogintime != null" >
+        #{memberLogintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memberLoginip != null" >
+        #{memberLoginip,jdbcType=VARCHAR},
+      </if>
+      <if test="memberParameters != null" >
+        #{memberParameters,jdbcType=VARCHAR},
+      </if>
+      <if test="memberOrder != null" >
+        #{memberOrder,jdbcType=INTEGER},
+      </if>
+      <if test="memberBz != null" >
+        #{memberBz,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPc != null" >
+        #{memberPc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberYhpcid != null" >
+        #{memberYhpcid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.mybatis.model.BasisMember" >
+    update basis_member
+    <set >
+      <if test="memberStructid != null" >
+        member_structid = #{memberStructid,jdbcType=INTEGER},
+      </if>
+      <if test="memberParttypeid != null" >
+        member_parttypeid = #{memberParttypeid,jdbcType=INTEGER},
+      </if>
+      <if test="memberNo != null" >
+        member_no = #{memberNo,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAlias != null" >
+        member_alias = #{memberAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="memberMc != null" >
+        member_mc = #{memberMc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwd != null" >
+        member_pwd = #{memberPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPwdRequest != null" >
+        member_pwd_request = #{memberPwdRequest,jdbcType=INTEGER},
+      </if>
+      <if test="memberPwdReject != null" >
+        member_pwd_reject = #{memberPwdReject,jdbcType=INTEGER},
+      </if>
+      <if test="memberPassAlltime != null" >
+        member_pass_alltime = #{memberPassAlltime,jdbcType=INTEGER},
+      </if>
+      <if test="memberStop != null" >
+        member_stop = #{memberStop,jdbcType=INTEGER},
+      </if>
+      <if test="memberTime != null" >
+        member_time = #{memberTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memberDel != null" >
+        member_del = #{memberDel,jdbcType=INTEGER},
+      </if>
+      <if test="memberUsbkey != null" >
+        member_usbkey = #{memberUsbkey,jdbcType=INTEGER},
+      </if>
+      <if test="memberSerialnumber != null" >
+        member_serialnumber = #{memberSerialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="memberXm != null" >
+        member_xm = #{memberXm,jdbcType=VARCHAR},
+      </if>
+      <if test="memberZjno != null" >
+        member_zjno = #{memberZjno,jdbcType=VARCHAR},
+      </if>
+      <if test="memberEmail != null" >
+        member_email = #{memberEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="memberGzdw != null" >
+        member_gzdw = #{memberGzdw,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAddress != null" >
+        member_address = #{memberAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null" >
+        member_phone = #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="memberOnline != null" >
+        member_online = #{memberOnline,jdbcType=INTEGER},
+      </if>
+      <if test="memberLogintime != null" >
+        member_logintime = #{memberLogintime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="memberLoginip != null" >
+        member_loginip = #{memberLoginip,jdbcType=VARCHAR},
+      </if>
+      <if test="memberParameters != null" >
+        member_parameters = #{memberParameters,jdbcType=VARCHAR},
+      </if>
+      <if test="memberOrder != null" >
+        member_order = #{memberOrder,jdbcType=INTEGER},
+      </if>
+      <if test="memberBz != null" >
+        member_bz = #{memberBz,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPc != null" >
+        member_pc = #{memberPc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberYhpcid != null" >
+        member_yhpcid = #{memberYhpcid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where memberid = #{memberid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joy.mybatis.model.BasisMember" >
+    update basis_member
+    set member_structid = #{memberStructid,jdbcType=INTEGER},
+      member_parttypeid = #{memberParttypeid,jdbcType=INTEGER},
+      member_no = #{memberNo,jdbcType=VARCHAR},
+      member_alias = #{memberAlias,jdbcType=VARCHAR},
+      member_mc = #{memberMc,jdbcType=VARCHAR},
+      member_pwd = #{memberPwd,jdbcType=VARCHAR},
+      member_pwd_request = #{memberPwdRequest,jdbcType=INTEGER},
+      member_pwd_reject = #{memberPwdReject,jdbcType=INTEGER},
+      member_pass_alltime = #{memberPassAlltime,jdbcType=INTEGER},
+      member_stop = #{memberStop,jdbcType=INTEGER},
+      member_time = #{memberTime,jdbcType=TIMESTAMP},
+      member_del = #{memberDel,jdbcType=INTEGER},
+      member_usbkey = #{memberUsbkey,jdbcType=INTEGER},
+      member_serialnumber = #{memberSerialnumber,jdbcType=VARCHAR},
+      member_xm = #{memberXm,jdbcType=VARCHAR},
+      member_zjno = #{memberZjno,jdbcType=VARCHAR},
+      member_email = #{memberEmail,jdbcType=VARCHAR},
+      member_gzdw = #{memberGzdw,jdbcType=VARCHAR},
+      member_address = #{memberAddress,jdbcType=VARCHAR},
+      member_phone = #{memberPhone,jdbcType=VARCHAR},
+      member_online = #{memberOnline,jdbcType=INTEGER},
+      member_logintime = #{memberLogintime,jdbcType=TIMESTAMP},
+      member_loginip = #{memberLoginip,jdbcType=VARCHAR},
+      member_parameters = #{memberParameters,jdbcType=VARCHAR},
+      member_order = #{memberOrder,jdbcType=INTEGER},
+      member_bz = #{memberBz,jdbcType=VARCHAR},
+      member_pc = #{memberPc,jdbcType=VARCHAR},
+      member_yhpcid = #{memberYhpcid,jdbcType=INTEGER}
+    where memberid = #{memberid,jdbcType=INTEGER}
+  </update>
+</mapper>
