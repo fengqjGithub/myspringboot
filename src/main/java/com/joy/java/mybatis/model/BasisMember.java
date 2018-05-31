@@ -1,4 +1,4 @@
-package com.joy.mybatis.model;
+package com.joy.java.mybatis.model;
 
 import java.util.Date;
 

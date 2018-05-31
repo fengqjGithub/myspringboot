@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * @Package: com.joy.java.util.common
  * @Class: ClassUtil
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/7 17:21
  * @Description: class相关工具类,不使用反射.
  * @Param: param

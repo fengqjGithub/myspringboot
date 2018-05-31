@@ -25,7 +25,7 @@ import java.util.Set;
 /**
  * @Package: com.joy.java.util.web
  * @Class: HttpClient
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/7 17:21
  * @Description: TODO
  * @Param: param

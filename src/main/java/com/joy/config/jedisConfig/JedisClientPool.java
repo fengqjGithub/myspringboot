@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * @Project: myspringboot
  * @Package: com.joy.config.jedisConfig
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-25 11:23
  * @Description: TODO
  **/

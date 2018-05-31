@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joy.java.mybatis.mapper.QyKcMapper" >
+  <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.QyKc" >
+    <id column="kcid" property="kcid" jdbcType="INTEGER" />
+    <result column="kc_xqid" property="kcXqid" jdbcType="INTEGER" />
+    <result column="kc_xzid" property="kcXzid" jdbcType="INTEGER" />
+    <result column="kc_no" property="kcNo" jdbcType="VARCHAR" />
+    <result column="kc_mc" property="kcMc" jdbcType="VARCHAR" />
+    <result column="kc_jc" property="kcJc" jdbcType="VARCHAR" />
+    <result column="kc_sl" property="kcSl" jdbcType="INTEGER" />
+    <result column="kc_sfqy" property="kcSfqy" jdbcType="INTEGER" />
+    <result column="kc_yzbm" property="kcYzbm" jdbcType="VARCHAR" />
+    <result column="kc_yjdz" property="kcYjdz" jdbcType="VARCHAR" />
+    <result column="kc_gzdh" property="kcGzdh" jdbcType="VARCHAR" />
+    <result column="kc_gzcz" property="kcGzcz" jdbcType="VARCHAR" />
+    <result column="kc_rxdh" property="kcRxdh" jdbcType="VARCHAR" />
+    <result column="kc_email" property="kcEmail" jdbcType="VARCHAR" />
+    <result column="kc_web" property="kcWeb" jdbcType="VARCHAR" />
+    <result column="kc_fzr" property="kcFzr" jdbcType="VARCHAR" />
+    <result column="kc_fzrdh" property="kcFzrdh" jdbcType="VARCHAR" />
+    <result column="kc_lxr" property="kcLxr" jdbcType="VARCHAR" />
+    <result column="kc_lxrdh" property="kcLxrdh" jdbcType="VARCHAR" />
+    <result column="kc_zt" property="kcZt" jdbcType="VARCHAR" />
+    <result column="kc_sx" property="kcSx" jdbcType="VARCHAR" />
+    <result column="kc_order" property="kcOrder" jdbcType="INTEGER" />
+    <result column="kc_bz" property="kcBz" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    kcid, kc_xqid, kc_xzid, kc_no, kc_mc, kc_jc, kc_sl, kc_sfqy, kc_yzbm, kc_yjdz, kc_gzdh, 
+    kc_gzcz, kc_rxdh, kc_email, kc_web, kc_fzr, kc_fzrdh, kc_lxr, kc_lxrdh, kc_zt, kc_sx, 
+    kc_order, kc_bz
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from qy_kc
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from qy_kc
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.joy.java.mybatis.model.QyKc" >
+    insert into qy_kc (kcid, kc_xqid, kc_xzid, 
+      kc_no, kc_mc, kc_jc, kc_sl, 
+      kc_sfqy, kc_yzbm, kc_yjdz, 
+      kc_gzdh, kc_gzcz, kc_rxdh, 
+      kc_email, kc_web, kc_fzr, 
+      kc_fzrdh, kc_lxr, kc_lxrdh, 
+      kc_zt, kc_sx, kc_order, 
+      kc_bz)
+    values (#{kcid,jdbcType=INTEGER}, #{kcXqid,jdbcType=INTEGER}, #{kcXzid,jdbcType=INTEGER}, 
+      #{kcNo,jdbcType=VARCHAR}, #{kcMc,jdbcType=VARCHAR}, #{kcJc,jdbcType=VARCHAR}, #{kcSl,jdbcType=INTEGER}, 
+      #{kcSfqy,jdbcType=INTEGER}, #{kcYzbm,jdbcType=VARCHAR}, #{kcYjdz,jdbcType=VARCHAR}, 
+      #{kcGzdh,jdbcType=VARCHAR}, #{kcGzcz,jdbcType=VARCHAR}, #{kcRxdh,jdbcType=VARCHAR}, 
+      #{kcEmail,jdbcType=VARCHAR}, #{kcWeb,jdbcType=VARCHAR}, #{kcFzr,jdbcType=VARCHAR}, 
+      #{kcFzrdh,jdbcType=VARCHAR}, #{kcLxr,jdbcType=VARCHAR}, #{kcLxrdh,jdbcType=VARCHAR}, 
+      #{kcZt,jdbcType=VARCHAR}, #{kcSx,jdbcType=VARCHAR}, #{kcOrder,jdbcType=INTEGER}, 
+      #{kcBz,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.QyKc" >
+    insert into qy_kc
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="kcid != null" >
+        kcid,
+      </if>
+      <if test="kcXqid != null" >
+        kc_xqid,
+      </if>
+      <if test="kcXzid != null" >
+        kc_xzid,
+      </if>
+      <if test="kcNo != null" >
+        kc_no,
+      </if>
+      <if test="kcMc != null" >
+        kc_mc,
+      </if>
+      <if test="kcJc != null" >
+        kc_jc,
+      </if>
+      <if test="kcSl != null" >
+        kc_sl,
+      </if>
+      <if test="kcSfqy != null" >
+        kc_sfqy,
+      </if>
+      <if test="kcYzbm != null" >
+        kc_yzbm,
+      </if>
+      <if test="kcYjdz != null" >
+        kc_yjdz,
+      </if>
+      <if test="kcGzdh != null" >
+        kc_gzdh,
+      </if>
+      <if test="kcGzcz != null" >
+        kc_gzcz,
+      </if>
+      <if test="kcRxdh != null" >
+        kc_rxdh,
+      </if>
+      <if test="kcEmail != null" >
+        kc_email,
+      </if>
+      <if test="kcWeb != null" >
+        kc_web,
+      </if>
+      <if test="kcFzr != null" >
+        kc_fzr,
+      </if>
+      <if test="kcFzrdh != null" >
+        kc_fzrdh,
+      </if>
+      <if test="kcLxr != null" >
+        kc_lxr,
+      </if>
+      <if test="kcLxrdh != null" >
+        kc_lxrdh,
+      </if>
+      <if test="kcZt != null" >
+        kc_zt,
+      </if>
+      <if test="kcSx != null" >
+        kc_sx,
+      </if>
+      <if test="kcOrder != null" >
+        kc_order,
+      </if>
+      <if test="kcBz != null" >
+        kc_bz,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="kcid != null" >
+        #{kcid,jdbcType=INTEGER},
+      </if>
+      <if test="kcXqid != null" >
+        #{kcXqid,jdbcType=INTEGER},
+      </if>
+      <if test="kcXzid != null" >
+        #{kcXzid,jdbcType=INTEGER},
+      </if>
+      <if test="kcNo != null" >
+        #{kcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="kcMc != null" >
+        #{kcMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcJc != null" >
+        #{kcJc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcSl != null" >
+        #{kcSl,jdbcType=INTEGER},
+      </if>
+      <if test="kcSfqy != null" >
+        #{kcSfqy,jdbcType=INTEGER},
+      </if>
+      <if test="kcYzbm != null" >
+        #{kcYzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="kcYjdz != null" >
+        #{kcYjdz,jdbcType=VARCHAR},
+      </if>
+      <if test="kcGzdh != null" >
+        #{kcGzdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcGzcz != null" >
+        #{kcGzcz,jdbcType=VARCHAR},
+      </if>
+      <if test="kcRxdh != null" >
+        #{kcRxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcEmail != null" >
+        #{kcEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="kcWeb != null" >
+        #{kcWeb,jdbcType=VARCHAR},
+      </if>
+      <if test="kcFzr != null" >
+        #{kcFzr,jdbcType=VARCHAR},
+      </if>
+      <if test="kcFzrdh != null" >
+        #{kcFzrdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcLxr != null" >
+        #{kcLxr,jdbcType=VARCHAR},
+      </if>
+      <if test="kcLxrdh != null" >
+        #{kcLxrdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcZt != null" >
+        #{kcZt,jdbcType=VARCHAR},
+      </if>
+      <if test="kcSx != null" >
+        #{kcSx,jdbcType=VARCHAR},
+      </if>
+      <if test="kcOrder != null" >
+        #{kcOrder,jdbcType=INTEGER},
+      </if>
+      <if test="kcBz != null" >
+        #{kcBz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.QyKc" >
+    update qy_kc
+    <set >
+      <if test="kcXqid != null" >
+        kc_xqid = #{kcXqid,jdbcType=INTEGER},
+      </if>
+      <if test="kcXzid != null" >
+        kc_xzid = #{kcXzid,jdbcType=INTEGER},
+      </if>
+      <if test="kcNo != null" >
+        kc_no = #{kcNo,jdbcType=VARCHAR},
+      </if>
+      <if test="kcMc != null" >
+        kc_mc = #{kcMc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcJc != null" >
+        kc_jc = #{kcJc,jdbcType=VARCHAR},
+      </if>
+      <if test="kcSl != null" >
+        kc_sl = #{kcSl,jdbcType=INTEGER},
+      </if>
+      <if test="kcSfqy != null" >
+        kc_sfqy = #{kcSfqy,jdbcType=INTEGER},
+      </if>
+      <if test="kcYzbm != null" >
+        kc_yzbm = #{kcYzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="kcYjdz != null" >
+        kc_yjdz = #{kcYjdz,jdbcType=VARCHAR},
+      </if>
+      <if test="kcGzdh != null" >
+        kc_gzdh = #{kcGzdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcGzcz != null" >
+        kc_gzcz = #{kcGzcz,jdbcType=VARCHAR},
+      </if>
+      <if test="kcRxdh != null" >
+        kc_rxdh = #{kcRxdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcEmail != null" >
+        kc_email = #{kcEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="kcWeb != null" >
+        kc_web = #{kcWeb,jdbcType=VARCHAR},
+      </if>
+      <if test="kcFzr != null" >
+        kc_fzr = #{kcFzr,jdbcType=VARCHAR},
+      </if>
+      <if test="kcFzrdh != null" >
+        kc_fzrdh = #{kcFzrdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcLxr != null" >
+        kc_lxr = #{kcLxr,jdbcType=VARCHAR},
+      </if>
+      <if test="kcLxrdh != null" >
+        kc_lxrdh = #{kcLxrdh,jdbcType=VARCHAR},
+      </if>
+      <if test="kcZt != null" >
+        kc_zt = #{kcZt,jdbcType=VARCHAR},
+      </if>
+      <if test="kcSx != null" >
+        kc_sx = #{kcSx,jdbcType=VARCHAR},
+      </if>
+      <if test="kcOrder != null" >
+        kc_order = #{kcOrder,jdbcType=INTEGER},
+      </if>
+      <if test="kcBz != null" >
+        kc_bz = #{kcBz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.QyKc" >
+    update qy_kc
+    set kc_xqid = #{kcXqid,jdbcType=INTEGER},
+      kc_xzid = #{kcXzid,jdbcType=INTEGER},
+      kc_no = #{kcNo,jdbcType=VARCHAR},
+      kc_mc = #{kcMc,jdbcType=VARCHAR},
+      kc_jc = #{kcJc,jdbcType=VARCHAR},
+      kc_sl = #{kcSl,jdbcType=INTEGER},
+      kc_sfqy = #{kcSfqy,jdbcType=INTEGER},
+      kc_yzbm = #{kcYzbm,jdbcType=VARCHAR},
+      kc_yjdz = #{kcYjdz,jdbcType=VARCHAR},
+      kc_gzdh = #{kcGzdh,jdbcType=VARCHAR},
+      kc_gzcz = #{kcGzcz,jdbcType=VARCHAR},
+      kc_rxdh = #{kcRxdh,jdbcType=VARCHAR},
+      kc_email = #{kcEmail,jdbcType=VARCHAR},
+      kc_web = #{kcWeb,jdbcType=VARCHAR},
+      kc_fzr = #{kcFzr,jdbcType=VARCHAR},
+      kc_fzrdh = #{kcFzrdh,jdbcType=VARCHAR},
+      kc_lxr = #{kcLxr,jdbcType=VARCHAR},
+      kc_lxrdh = #{kcLxrdh,jdbcType=VARCHAR},
+      kc_zt = #{kcZt,jdbcType=VARCHAR},
+      kc_sx = #{kcSx,jdbcType=VARCHAR},
+      kc_order = #{kcOrder,jdbcType=INTEGER},
+      kc_bz = #{kcBz,jdbcType=VARCHAR}
+    where kcid = #{kcid,jdbcType=INTEGER}
+  </update>
+</mapper>

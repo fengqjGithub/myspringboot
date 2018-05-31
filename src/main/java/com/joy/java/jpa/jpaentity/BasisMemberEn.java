@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 /**
  * @Package: com.joy.java.jpa.jpaentity
  * @Class: BasisMemberEn
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/15 15:09
  * @Description: TODO
  * @Param: param

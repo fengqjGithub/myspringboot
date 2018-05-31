@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @Package: com.joy.java.jpa.jpadao
  * @Class: TjsjTjdierjbDao
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/15 15:09
  * @Description: TODO
  * @Param: param

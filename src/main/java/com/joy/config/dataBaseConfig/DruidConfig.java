@@ -20,7 +20,7 @@ import java.sql.SQLException;
 /**
  * @Package: com.joy.config
  * @Class: DruidConfig
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/9 17:45
  * @Description: TODO
  * @Param: param

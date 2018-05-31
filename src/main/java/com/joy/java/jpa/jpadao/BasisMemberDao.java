@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Package: com.joy.java.jpa.jpadao
  * @Class: BasisMemberDao
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/15 15:08
  * @Description: TODO
  * @Param: param

@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * @Package: com.joy.java.jpa.jpaentity
  * @Class: TjsjTjdiyijbEnKey
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/15 15:15
  * @Description: TODO
  * @Param: param

@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 /**
  * @Package: com.hnzr.utils
  * @Class: MyStringUtil
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/3/4 14:28
  * @Description: TODO
  * @Exception

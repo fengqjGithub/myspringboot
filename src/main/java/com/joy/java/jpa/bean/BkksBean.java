@@ -8,7 +8,7 @@ import javax.persistence.Id;
 /**
  * @Project: sfrzapi
  * @Package: com.joy.java.jpa.bean
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-04-18 16:53
  * @Description: TODO
  **/

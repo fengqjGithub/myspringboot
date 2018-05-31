@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * @Package: com.joy.java.jpa.jpaservice
  * @Class: JpaQueryService
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/5/15 15:15
  * @Description: TODO
  * @Param: param

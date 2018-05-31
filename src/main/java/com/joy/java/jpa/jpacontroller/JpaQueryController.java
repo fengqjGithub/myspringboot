@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @Project: myspringboot
  * @Package: com.joy.java.jpa.jpaController
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-04 11:55
  * @Description: TODO
  **/
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 五种查询方式涵盖了spring-data-jpa的大部分基础查询，
  * 可扩展性强，能满足大部分项目查询需求
- * by冯前进
+ * byJoy
  */
 @RestController
 public class JpaQueryController {

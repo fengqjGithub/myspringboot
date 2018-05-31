@@ -1,6 +1,9 @@
-package com.joy.mybatis.mapper;
+package com.joy.java.mybatis.mapper;
 
-import com.joy.mybatis.model.BasisMember;
+import com.github.pagehelper.Page;
+import com.joy.java.mybatis.model.BasisMember;
+
+import java.util.List;
 
 public interface BasisMemberMapper {
     int deleteByPrimaryKey(Integer memberid);
@@ -14,4 +17,6 @@ public interface BasisMemberMapper {
     int updateByPrimaryKeySelective(BasisMember record);
 
     int updateByPrimaryKey(BasisMember record);
+
+    Page<BasisMember> selectAll();
 }

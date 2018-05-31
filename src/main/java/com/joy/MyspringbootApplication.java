@@ -1,5 +1,6 @@
 package com.joy;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * @Package: com.joy
  * @Class: MyspringbootApplication
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/4/15 15:55
  * @Description: TODO
  * @Param: param
@@ -35,6 +36,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ServletComponentScan
 @EnableCaching
 @EnableAutoConfiguration(exclude = {MultipartAutoConfiguration.class})
+@MapperScan("com.joy.java.mybatis.mapper")
 public class MyspringbootApplication extends SpringBootServletInitializer {
 
     @Override

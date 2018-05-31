@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * @Project: sfrzapi
  * @Package: com.joy.java.jpa.bean
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-04-14 9:44
  * @Description: TODO
  **/

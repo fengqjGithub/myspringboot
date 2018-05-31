@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import redis.clients.jedis.JedisPool;
 
-/** 
+/**
  * @Project: myspringboot
  * @Package: com.joy.config.jedisConfig
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-25 10:59
  * @Description: TODO
  **/

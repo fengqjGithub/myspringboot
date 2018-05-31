@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joy.java.mybatis.mapper.BkKsMapper">
+    <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.BkKs">
+        <id column="ksid" property="ksid" jdbcType="INTEGER"/>
+        <result column="ks_bmdid" property="ksBmdid" jdbcType="INTEGER"/>
+        <result column="ks_ksno" property="ksKsno" jdbcType="VARCHAR"/>
+        <result column="ks_bmxh" property="ksBmxh" jdbcType="VARCHAR"/>
+        <result column="ks_zkzh" property="ksZkzh" jdbcType="VARCHAR"/>
+        <result column="ks_zjno" property="ksZjno" jdbcType="VARCHAR"/>
+        <result column="ks_ksno1" property="ksKsno1" jdbcType="VARCHAR"/>
+        <result column="ks_ksno2" property="ksKsno2" jdbcType="VARCHAR"/>
+        <result column="ks_xm" property="ksXm" jdbcType="VARCHAR"/>
+        <result column="ks_xb" property="ksXb" jdbcType="INTEGER"/>
+        <result column="ks_xjno" property="ksXjno" jdbcType="VARCHAR"/>
+        <result column="ks_lxr" property="ksLxr" jdbcType="VARCHAR"/>
+        <result column="ks_lxrdh" property="ksLxrdh" jdbcType="VARCHAR"/>
+        <result column="ks_lxrsj" property="ksLxrsj" jdbcType="VARCHAR"/>
+        <result column="ks_xpbz" property="ksXpbz" jdbcType="INTEGER"/>
+        <result column="ks_xp" property="ksXp" jdbcType="VARCHAR"/>
+        <result column="ks_sfks" property="ksSfks" jdbcType="INTEGER"/>
+        <result column="ks_cjbj" property="ksCjbj" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ksid, ks_bmdid, ks_ksno, ks_bmxh, ks_zkzh, ks_zjno, ks_ksno1, ks_ksno2, ks_xm, ks_xb, 
+    ks_xjno, ks_lxr, ks_lxrdh, ks_lxrsj, ks_xpbz, ks_xp, ks_sfks, ks_cjbj
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from bk_ks
+        where ksid = #{ksid,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bk_ks
+    where ksid = #{ksid,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.joy.java.mybatis.model.BkKs">
+    insert into bk_ks (ksid, ks_bmdid, ks_ksno, 
+      ks_bmxh, ks_zkzh, ks_zjno, 
+      ks_ksno1, ks_ksno2, ks_xm, 
+      ks_xb, ks_xjno, ks_lxr, 
+      ks_lxrdh, ks_lxrsj, ks_xpbz, 
+      ks_xp, ks_sfks, ks_cjbj
+      )
+    values (#{ksid,jdbcType=INTEGER}, #{ksBmdid,jdbcType=INTEGER}, #{ksKsno,jdbcType=VARCHAR}, 
+      #{ksBmxh,jdbcType=VARCHAR}, #{ksZkzh,jdbcType=VARCHAR}, #{ksZjno,jdbcType=VARCHAR}, 
+      #{ksKsno1,jdbcType=VARCHAR}, #{ksKsno2,jdbcType=VARCHAR}, #{ksXm,jdbcType=VARCHAR}, 
+      #{ksXb,jdbcType=INTEGER}, #{ksXjno,jdbcType=VARCHAR}, #{ksLxr,jdbcType=VARCHAR}, 
+      #{ksLxrdh,jdbcType=VARCHAR}, #{ksLxrsj,jdbcType=VARCHAR}, #{ksXpbz,jdbcType=INTEGER}, 
+      #{ksXp,jdbcType=VARCHAR}, #{ksSfks,jdbcType=INTEGER}, #{ksCjbj,jdbcType=INTEGER}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.BkKs">
+        insert into bk_ks
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="ksid != null">
+                ksid,
+            </if>
+            <if test="ksBmdid != null">
+                ks_bmdid,
+            </if>
+            <if test="ksKsno != null">
+                ks_ksno,
+            </if>
+            <if test="ksBmxh != null">
+                ks_bmxh,
+            </if>
+            <if test="ksZkzh != null">
+                ks_zkzh,
+            </if>
+            <if test="ksZjno != null">
+                ks_zjno,
+            </if>
+            <if test="ksKsno1 != null">
+                ks_ksno1,
+            </if>
+            <if test="ksKsno2 != null">
+                ks_ksno2,
+            </if>
+            <if test="ksXm != null">
+                ks_xm,
+            </if>
+            <if test="ksXb != null">
+                ks_xb,
+            </if>
+            <if test="ksXjno != null">
+                ks_xjno,
+            </if>
+            <if test="ksLxr != null">
+                ks_lxr,
+            </if>
+            <if test="ksLxrdh != null">
+                ks_lxrdh,
+            </if>
+            <if test="ksLxrsj != null">
+                ks_lxrsj,
+            </if>
+            <if test="ksXpbz != null">
+                ks_xpbz,
+            </if>
+            <if test="ksXp != null">
+                ks_xp,
+            </if>
+            <if test="ksSfks != null">
+                ks_sfks,
+            </if>
+            <if test="ksCjbj != null">
+                ks_cjbj,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="ksid != null">
+                #{ksid,jdbcType=INTEGER},
+            </if>
+            <if test="ksBmdid != null">
+                #{ksBmdid,jdbcType=INTEGER},
+            </if>
+            <if test="ksKsno != null">
+                #{ksKsno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksBmxh != null">
+                #{ksBmxh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksZkzh != null">
+                #{ksZkzh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksZjno != null">
+                #{ksZjno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksKsno1 != null">
+                #{ksKsno1,jdbcType=VARCHAR},
+            </if>
+            <if test="ksKsno2 != null">
+                #{ksKsno2,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXm != null">
+                #{ksXm,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXb != null">
+                #{ksXb,jdbcType=INTEGER},
+            </if>
+            <if test="ksXjno != null">
+                #{ksXjno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxr != null">
+                #{ksLxr,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxrdh != null">
+                #{ksLxrdh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxrsj != null">
+                #{ksLxrsj,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXpbz != null">
+                #{ksXpbz,jdbcType=INTEGER},
+            </if>
+            <if test="ksXp != null">
+                #{ksXp,jdbcType=VARCHAR},
+            </if>
+            <if test="ksSfks != null">
+                #{ksSfks,jdbcType=INTEGER},
+            </if>
+            <if test="ksCjbj != null">
+                #{ksCjbj,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.BkKs">
+        update bk_ks
+        <set>
+            <if test="ksBmdid != null">
+                ks_bmdid = #{ksBmdid,jdbcType=INTEGER},
+            </if>
+            <if test="ksKsno != null">
+                ks_ksno = #{ksKsno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksBmxh != null">
+                ks_bmxh = #{ksBmxh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksZkzh != null">
+                ks_zkzh = #{ksZkzh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksZjno != null">
+                ks_zjno = #{ksZjno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksKsno1 != null">
+                ks_ksno1 = #{ksKsno1,jdbcType=VARCHAR},
+            </if>
+            <if test="ksKsno2 != null">
+                ks_ksno2 = #{ksKsno2,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXm != null">
+                ks_xm = #{ksXm,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXb != null">
+                ks_xb = #{ksXb,jdbcType=INTEGER},
+            </if>
+            <if test="ksXjno != null">
+                ks_xjno = #{ksXjno,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxr != null">
+                ks_lxr = #{ksLxr,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxrdh != null">
+                ks_lxrdh = #{ksLxrdh,jdbcType=VARCHAR},
+            </if>
+            <if test="ksLxrsj != null">
+                ks_lxrsj = #{ksLxrsj,jdbcType=VARCHAR},
+            </if>
+            <if test="ksXpbz != null">
+                ks_xpbz = #{ksXpbz,jdbcType=INTEGER},
+            </if>
+            <if test="ksXp != null">
+                ks_xp = #{ksXp,jdbcType=VARCHAR},
+            </if>
+            <if test="ksSfks != null">
+                ks_sfks = #{ksSfks,jdbcType=INTEGER},
+            </if>
+            <if test="ksCjbj != null">
+                ks_cjbj = #{ksCjbj,jdbcType=INTEGER},
+            </if>
+        </set>
+        where ksid = #{ksid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.BkKs">
+    update bk_ks
+    set ks_bmdid = #{ksBmdid,jdbcType=INTEGER},
+      ks_ksno = #{ksKsno,jdbcType=VARCHAR},
+      ks_bmxh = #{ksBmxh,jdbcType=VARCHAR},
+      ks_zkzh = #{ksZkzh,jdbcType=VARCHAR},
+      ks_zjno = #{ksZjno,jdbcType=VARCHAR},
+      ks_ksno1 = #{ksKsno1,jdbcType=VARCHAR},
+      ks_ksno2 = #{ksKsno2,jdbcType=VARCHAR},
+      ks_xm = #{ksXm,jdbcType=VARCHAR},
+      ks_xb = #{ksXb,jdbcType=INTEGER},
+      ks_xjno = #{ksXjno,jdbcType=VARCHAR},
+      ks_lxr = #{ksLxr,jdbcType=VARCHAR},
+      ks_lxrdh = #{ksLxrdh,jdbcType=VARCHAR},
+      ks_lxrsj = #{ksLxrsj,jdbcType=VARCHAR},
+      ks_xpbz = #{ksXpbz,jdbcType=INTEGER},
+      ks_xp = #{ksXp,jdbcType=VARCHAR},
+      ks_sfks = #{ksSfks,jdbcType=INTEGER},
+      ks_cjbj = #{ksCjbj,jdbcType=INTEGER}
+    where ksid = #{ksid,jdbcType=INTEGER}
+  </update>
+    <select id="selectBkksQykc" resultMap="bkksQykcBean">
+    select *  from bk_kskscc
+    left join bk_ks on kskscc_ksid = ksid
+    left join qy_kc on  kskscc_kcid = kcid
+    WHERE ks_xm=#{param1} and kskscc_kmid=#{param2}
+  </select>
+    <resultMap id="bkksQykcBean" type="com.joy.java.mybatis.bean.BkksQykc">
+        <association property="bkKs" resultMap="BaseResultMap"/>
+        <association property="qyKc" javaType="com.joy.java.mybatis.model.QyKc">
+            <id column="kcid" property="kcid" jdbcType="INTEGER"/>
+            <result column="kc_xqid" property="kcXqid" jdbcType="INTEGER"/>
+            <result column="kc_xzid" property="kcXzid" jdbcType="INTEGER"/>
+            <result column="kc_no" property="kcNo" jdbcType="VARCHAR"/>
+            <result column="kc_mc" property="kcMc" jdbcType="VARCHAR"/>
+            <result column="kc_jc" property="kcJc" jdbcType="VARCHAR"/>
+            <result column="kc_sl" property="kcSl" jdbcType="INTEGER"/>
+            <result column="kc_sfqy" property="kcSfqy" jdbcType="INTEGER"/>
+            <result column="kc_yzbm" property="kcYzbm" jdbcType="VARCHAR"/>
+            <result column="kc_yjdz" property="kcYjdz" jdbcType="VARCHAR"/>
+            <result column="kc_gzdh" property="kcGzdh" jdbcType="VARCHAR"/>
+            <result column="kc_gzcz" property="kcGzcz" jdbcType="VARCHAR"/>
+            <result column="kc_rxdh" property="kcRxdh" jdbcType="VARCHAR"/>
+            <result column="kc_email" property="kcEmail" jdbcType="VARCHAR"/>
+            <result column="kc_web" property="kcWeb" jdbcType="VARCHAR"/>
+            <result column="kc_fzr" property="kcFzr" jdbcType="VARCHAR"/>
+            <result column="kc_fzrdh" property="kcFzrdh" jdbcType="VARCHAR"/>
+            <result column="kc_lxr" property="kcLxr" jdbcType="VARCHAR"/>
+            <result column="kc_lxrdh" property="kcLxrdh" jdbcType="VARCHAR"/>
+            <result column="kc_zt" property="kcZt" jdbcType="VARCHAR"/>
+            <result column="kc_sx" property="kcSx" jdbcType="VARCHAR"/>
+            <result column="kc_order" property="kcOrder" jdbcType="INTEGER"/>
+            <result column="kc_bz" property="kcBz" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+    <select id="selectLeft" resultMap="bkksKsccss" parameterType="String">
+        select *  from bk_ks
+        left join bk_kskscc on kskscc_ksid = ksid
+        WHERE ks_xm=#{ksXm}
+    </select>
+    <resultMap id="bkksKsccss" type="com.joy.java.mybatis.model.BkKs">
+        <id property="ksid" column="ksid"/>
+        <result column="ks_bmdid" property="ksBmdid" jdbcType="INTEGER"/>
+        <result column="ks_ksno" property="ksKsno" jdbcType="VARCHAR"/>
+        <result column="ks_bmxh" property="ksBmxh" jdbcType="VARCHAR"/>
+        <result column="ks_zkzh" property="ksZkzh" jdbcType="VARCHAR"/>
+        <result column="ks_zjno" property="ksZjno" jdbcType="VARCHAR"/>
+        <result column="ks_ksno1" property="ksKsno1" jdbcType="VARCHAR"/>
+        <result column="ks_ksno2" property="ksKsno2" jdbcType="VARCHAR"/>
+        <result column="ks_xm" property="ksXm" jdbcType="VARCHAR"/>
+        <result column="ks_xb" property="ksXb" jdbcType="INTEGER"/>
+        <result column="ks_xjno" property="ksXjno" jdbcType="VARCHAR"/>
+        <result column="ks_lxr" property="ksLxr" jdbcType="VARCHAR"/>
+        <result column="ks_lxrdh" property="ksLxrdh" jdbcType="VARCHAR"/>
+        <result column="ks_lxrsj" property="ksLxrsj" jdbcType="VARCHAR"/>
+        <result column="ks_xpbz" property="ksXpbz" jdbcType="INTEGER"/>
+        <result column="ks_xp" property="ksXp" jdbcType="VARCHAR"/>
+        <result column="ks_sfks" property="ksSfks" jdbcType="INTEGER"/>
+        <result column="ks_cjbj" property="ksCjbj" jdbcType="INTEGER"/>
+        <collection property="bkKsksccs" ofType="com.joy.java.mybatis.model.BkKskscc">
+            <id column="kskscc_ksid" property="ksksccKsid" jdbcType="INTEGER" />
+            <id column="kskscc_kmid" property="ksksccKmid" jdbcType="INTEGER" />
+            <id column="kskscc_kcid" property="ksksccKcid" jdbcType="INTEGER" />
+            <id column="kskscc_kcssid" property="ksksccKcssid" jdbcType="INTEGER" />
+            <result column="kskscc_zw" property="ksksccZw" jdbcType="VARCHAR" />
+            <result column="kskscc_tzzw" property="ksksccTzzw" jdbcType="VARCHAR" />
+        </collection>
+    </resultMap>
+</mapper>

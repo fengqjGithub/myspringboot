@@ -4,7 +4,7 @@ server:
 spring:
     datasource:
       type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:sqlserver://10.2.18.204;DatabaseName=hngx20180423
+      url: jdbc:sqlserver://localhost;DatabaseName=hngx20180423
 #      url: jdbc:sqlserver://192.168.1.92;DatabaseName=hngx20180421
       username: sa
       password: 123456
@@ -77,6 +77,8 @@ spring:
 logging:
   config: classpath:logback.xml
   path: F:/logs
+  level:
+    com.joy.java.mybatis.mapper : debug
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.joy.mybatis.model

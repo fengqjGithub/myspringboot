@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.joy.mybatis.mapper.BasisMemberMapper" >
-  <resultMap id="BaseResultMap" type="com.joy.mybatis.model.BasisMember" >
+<mapper namespace="com.joy.java.mybatis.mapper.BasisMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.BasisMember" >
     <id column="memberid" property="memberid" jdbcType="INTEGER" />
     <result column="member_structid" property="memberStructid" jdbcType="INTEGER" />
     <result column="member_parttypeid" property="memberParttypeid" jdbcType="INTEGER" />
@@ -45,11 +45,16 @@
     from basis_member
     where memberid = #{memberid,jdbcType=INTEGER}
   </select>
+  <select id="selectAll"  resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from basis_member
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from basis_member
     where memberid = #{memberid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.joy.mybatis.model.BasisMember" >
+  <insert id="insert" parameterType="com.joy.java.mybatis.model.BasisMember" >
     insert into basis_member (memberid, member_structid, member_parttypeid, 
       member_no, member_alias, member_mc, 
       member_pwd, member_pwd_request, member_pwd_reject, 
@@ -71,7 +76,7 @@
       #{memberParameters,jdbcType=VARCHAR}, #{memberOrder,jdbcType=INTEGER}, #{memberBz,jdbcType=VARCHAR}, 
       #{memberPc,jdbcType=VARCHAR}, #{memberYhpcid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.joy.mybatis.model.BasisMember" >
+  <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.BasisMember" >
     insert into basis_member
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="memberid != null" >
@@ -252,7 +257,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.joy.mybatis.model.BasisMember" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.BasisMember" >
     update basis_member
     <set >
       <if test="memberStructid != null" >
@@ -342,7 +347,7 @@
     </set>
     where memberid = #{memberid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.joy.mybatis.model.BasisMember" >
+  <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.BasisMember" >
     update basis_member
     set member_structid = #{memberStructid,jdbcType=INTEGER},
       member_parttypeid = #{memberParttypeid,jdbcType=INTEGER},

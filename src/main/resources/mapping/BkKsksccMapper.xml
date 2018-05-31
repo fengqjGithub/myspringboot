@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.joy.java.mybatis.mapper.BkKsksccMapper" >
+  <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.BkKskscc" >
+    <id column="kskscc_ksid" property="ksksccKsid" jdbcType="INTEGER" />
+    <id column="kskscc_kmid" property="ksksccKmid" jdbcType="INTEGER" />
+    <id column="kskscc_kcid" property="ksksccKcid" jdbcType="INTEGER" />
+    <id column="kskscc_kcssid" property="ksksccKcssid" jdbcType="INTEGER" />
+    <result column="kskscc_zw" property="ksksccZw" jdbcType="VARCHAR" />
+    <result column="kskscc_tzzw" property="ksksccTzzw" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    kskscc_ksid, kskscc_kmid, kskscc_kcid, kskscc_kcssid, kskscc_zw, kskscc_tzzw
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.joy.java.mybatis.model.BkKsksccKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from bk_kskscc
+    where kskscc_ksid = #{ksksccKsid,jdbcType=INTEGER}
+      and kskscc_kmid = #{ksksccKmid,jdbcType=INTEGER}
+      and kskscc_kcid = #{ksksccKcid,jdbcType=INTEGER}
+      and kskscc_kcssid = #{ksksccKcssid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.joy.java.mybatis.model.BkKsksccKey" >
+    delete from bk_kskscc
+    where kskscc_ksid = #{ksksccKsid,jdbcType=INTEGER}
+      and kskscc_kmid = #{ksksccKmid,jdbcType=INTEGER}
+      and kskscc_kcid = #{ksksccKcid,jdbcType=INTEGER}
+      and kskscc_kcssid = #{ksksccKcssid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.joy.java.mybatis.model.BkKskscc" >
+    insert into bk_kskscc (kskscc_ksid, kskscc_kmid, kskscc_kcid, 
+      kskscc_kcssid, kskscc_zw, kskscc_tzzw
+      )
+    values (#{ksksccKsid,jdbcType=INTEGER}, #{ksksccKmid,jdbcType=INTEGER}, #{ksksccKcid,jdbcType=INTEGER}, 
+      #{ksksccKcssid,jdbcType=INTEGER}, #{ksksccZw,jdbcType=VARCHAR}, #{ksksccTzzw,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.BkKskscc" >
+    insert into bk_kskscc
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ksksccKsid != null" >
+        kskscc_ksid,
+      </if>
+      <if test="ksksccKmid != null" >
+        kskscc_kmid,
+      </if>
+      <if test="ksksccKcid != null" >
+        kskscc_kcid,
+      </if>
+      <if test="ksksccKcssid != null" >
+        kskscc_kcssid,
+      </if>
+      <if test="ksksccZw != null" >
+        kskscc_zw,
+      </if>
+      <if test="ksksccTzzw != null" >
+        kskscc_tzzw,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ksksccKsid != null" >
+        #{ksksccKsid,jdbcType=INTEGER},
+      </if>
+      <if test="ksksccKmid != null" >
+        #{ksksccKmid,jdbcType=INTEGER},
+      </if>
+      <if test="ksksccKcid != null" >
+        #{ksksccKcid,jdbcType=INTEGER},
+      </if>
+      <if test="ksksccKcssid != null" >
+        #{ksksccKcssid,jdbcType=INTEGER},
+      </if>
+      <if test="ksksccZw != null" >
+        #{ksksccZw,jdbcType=VARCHAR},
+      </if>
+      <if test="ksksccTzzw != null" >
+        #{ksksccTzzw,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.BkKskscc" >
+    update bk_kskscc
+    <set >
+      <if test="ksksccZw != null" >
+        kskscc_zw = #{ksksccZw,jdbcType=VARCHAR},
+      </if>
+      <if test="ksksccTzzw != null" >
+        kskscc_tzzw = #{ksksccTzzw,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where kskscc_ksid = #{ksksccKsid,jdbcType=INTEGER}
+      and kskscc_kmid = #{ksksccKmid,jdbcType=INTEGER}
+      and kskscc_kcid = #{ksksccKcid,jdbcType=INTEGER}
+      and kskscc_kcssid = #{ksksccKcssid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.BkKskscc" >
+    update bk_kskscc
+    set kskscc_zw = #{ksksccZw,jdbcType=VARCHAR},
+      kskscc_tzzw = #{ksksccTzzw,jdbcType=VARCHAR}
+    where kskscc_ksid = #{ksksccKsid,jdbcType=INTEGER}
+      and kskscc_kmid = #{ksksccKmid,jdbcType=INTEGER}
+      and kskscc_kcid = #{ksksccKcid,jdbcType=INTEGER}
+      and kskscc_kcssid = #{ksksccKcssid,jdbcType=INTEGER}
+  </update>
+</mapper>
