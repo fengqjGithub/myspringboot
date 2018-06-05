@@ -2,6 +2,7 @@ package com.joy.java.mybatis.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
+import com.joy.config.dataBaseConfig.DS;
 import com.joy.java.mybatis.mapper.BkKsMapper;
 import com.joy.java.mybatis.service.BasisMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class BasisMemberController {
     private BasisMemberService basisMemberService;
     @Autowired
     BkKsMapper bkKsMapper;
-
+    @DS("sqlserverDataSource")
     @RequestMapping("/getOne")
     public String getOne() {
         return JSON.toJSONString(basisMemberService.getMemberById());
@@ -30,6 +31,7 @@ public class BasisMemberController {
     /**
      * 分页
      */
+
     @RequestMapping("/getAll")
     public String getAll() {
         PageHelper.startPage(0,4);

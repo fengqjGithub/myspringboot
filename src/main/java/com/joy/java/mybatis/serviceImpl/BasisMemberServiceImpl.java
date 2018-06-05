@@ -1,6 +1,7 @@
 package com.joy.java.mybatis.serviceImpl;
 
 import com.github.pagehelper.Page;
+import com.joy.config.dataBaseConfig.DS;
 import com.joy.java.mybatis.mapper.BasisMemberMapper;
 import com.joy.java.mybatis.model.BasisMember;
 import com.joy.java.mybatis.service.BasisMemberService;
@@ -24,7 +25,7 @@ public class BasisMemberServiceImpl implements BasisMemberService {
     public BasisMember getMemberById(){
         return basisMemberMapper.selectByPrimaryKey(1);
     }
-
+    @DS("mysqlDataSource")
     public Page<BasisMember> getAll(){
         return basisMemberMapper.selectAll();
     }

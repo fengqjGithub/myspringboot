@@ -4,11 +4,10 @@ server:
 spring:
     datasource:
       type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:sqlserver://localhost;DatabaseName=hngx20180423
-#      url: jdbc:sqlserver://192.168.1.92;DatabaseName=hngx20180421
-      username: sa
-      password: 123456
-      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      url: jdbc:sqlserver://localhost;DatabaseName=hngx20180423
+#      username: sa
+#      password: 123456
+#      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
       # 下面为连接池的补充设置，应用到上面所有数据源中
       initialSize: 5
       minIdle: 5
@@ -26,6 +25,18 @@ spring:
       # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙(fqj于20180205去掉默认防火墙，允许sql批量执行，可在config中配置)
       filters: stat,slf4j
       logSlowSql: true
+      master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:sqlserver://localhost;DatabaseName=hngx20180423
+        username: sa
+        password: 123456
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      db1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/zbzichan?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: user
+        driverClassName: com.mysql.jdbc.Driver
     http:
       encoding:
         force: true
@@ -78,7 +89,7 @@ logging:
   config: classpath:logback.xml
   path: F:/logs
   level:
-    com.joy.java.mybatis.mapper : debug
+    com.joy.java.mybatis.mapper: debug
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.joy.mybatis.model

@@ -23,13 +23,13 @@ public class JDBCConn {
     public static String PASSWORD = "";
     public static String className = "";
 
-    @Value("${spring.datasource.url}")
+    @Value("${spring.datasource.master.url}")
     private String dbUrl;
-    @Value("${spring.datasource.username}")
+    @Value("${spring.datasource.master.username}")
     private String username;
-    @Value("${spring.datasource.password}")
+    @Value("${spring.datasource.master.password}")
     private String password;
-    @Value("${spring.datasource.driverClassName}")
+    @Value("${spring.datasource.master.driverClassName}")
     private String driverClassName;
 
     //注入静态变量
