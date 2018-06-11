@@ -2,7 +2,9 @@ package com.joy.java.redis.redisContoller;
 
 import com.alibaba.fastjson.JSON;
 import com.joy.java.redis.daoImpl.RedisHandle;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -19,29 +21,30 @@ import java.util.Set;
  * @Description: TODO
  **/
 @RestController
+@Api(description = "redisHandle查询接口")
 public class RedisHandleController {
     @Resource
     RedisHandle rdh;
 
-    @RequestMapping("/getAllKeys")
+    @RequestMapping(value = "/getAllKeys",method = RequestMethod.POST)
     public String getAllKeys() {
         Set set = rdh.getAllKeys();
         return JSON.toJSONString(set);
     }
 
-    @RequestMapping("/getAllString")
+    @RequestMapping(value = "/getAllString",method = RequestMethod.POST)
     public String getAllString() {
         Map map = rdh.getAllString();
         return JSON.toJSONString(map);
     }
 
-    @RequestMapping("/setKeyValue")
+    @RequestMapping(value = "/setKeyValue",method = RequestMethod.POST)
     public String setKeyValue() {
         rdh.set("test88888", "这是测试号码");
         return "成功";
     }
 
-    @RequestMapping("/getvalues")
+    @RequestMapping(value = "/getvalues",method = RequestMethod.POST)
     public String getvalues() {
         String value = JSON.toJSONString(rdh.get("juedi"));
         System.out.println("绝地求饶".equals(value));
@@ -49,7 +52,7 @@ public class RedisHandleController {
         return value;
     }
 
-    @RequestMapping("/getvaluestest88888")
+    @RequestMapping(value = "/getvaluestest88888",method = RequestMethod.POST)
     public String getvaluestest88888() {
         String value = JSON.toJSONString(rdh.get("test88888"));
         System.out.println(value);
@@ -59,7 +62,7 @@ public class RedisHandleController {
         return value;
     }
 
-    @RequestMapping("/addList")
+    @RequestMapping(value = "/addList",method = RequestMethod.POST)
     public String addList() {
         List list = new ArrayList();
         list.add("光明1");
@@ -69,7 +72,7 @@ public class RedisHandleController {
         return "成功";
     }
 
-    @RequestMapping("/getList")
+    @RequestMapping(value = "/getList",method = RequestMethod.POST)
     public String getList() {
         List list = rdh.getList("myList");
         return JSON.toJSONString(list);

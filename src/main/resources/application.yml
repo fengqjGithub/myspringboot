@@ -88,7 +88,7 @@ spring:
             dialect: org.hibernate.dialect.SQLServer2008Dialect
     data:
         mongodb:
-          database: bootmongodb
+          database: test
           uri: mongodb://localhost:27017
 logging:
   config: classpath:logback-spring.xml

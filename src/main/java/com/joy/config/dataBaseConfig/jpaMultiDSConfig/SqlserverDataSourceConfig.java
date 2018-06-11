@@ -1,0 +1,73 @@
+package com.joy.config.dataBaseConfig.jpaMultiDSConfig;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.sql.DataSource;
+import java.util.Map;
+
+/**
+ * @Project: myspringboot
+ * @Package: com.joy.config.dataBaseConfig.jpaMultiDSConfig
+ * @Author: 冯前进
+ * @Date: 2018-06-06 17:01
+ * @Description: TODO
+ **/
+//@Configuration
+//@EnableTransactionManagement
+//@EnableJpaRepositories(
+//        entityManagerFactoryRef = "entityManagerFactorySqlserver",
+//        transactionManagerRef = "dataSourceTransactionSqlserver",
+//        basePackages = {"com.joy.java.jpa.sqlserver"})
+public class SqlserverDataSourceConfig {
+//    @Resource
+//    @Qualifier("sqlserverDataSource")
+//    private DataSource sqlserverDataSource;
+//
+//    @Primary
+//    @Bean(name = "entityManagerPrimary")
+//    public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
+//        return entityManagerFactorySqlserver(builder).getObject().createEntityManager();
+//    }
+//
+//    @Resource
+//    private JpaProperties jpaProperties;
+//
+//    private Map<String, Object> getVendorProperties() {
+//        return jpaProperties.getHibernateProperties(new HibernateSettings());
+//    }
+//
+//    /**
+//     * 设置实体类所在位置
+//     */
+//    @Primary
+//    @Bean(name = {"entityManagerFactorySqlserver","entityManagerFactory"})
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactorySqlserver(EntityManagerFactoryBuilder builder) {
+//        System.out.println("-----------------------=============");
+//        LocalContainerEntityManagerFactoryBean factoryBean =builder
+//                .dataSource(sqlserverDataSource)
+//                .packages("com.joy.java.jpa.sqlserver.jpaentity")
+//                .persistenceUnit("sqlserverDataSourceUnit")
+//                .properties(getVendorProperties())
+//                .build();
+//        return factoryBean;
+//    }
+//
+//    @Primary
+//    @Bean(name = "dataSourceTransactionSqlserver")
+//    public PlatformTransactionManager dataSourceTransactionSqlserver(EntityManagerFactoryBuilder builder) {
+//        return new JpaTransactionManager(entityManagerFactorySqlserver(builder).getObject());
+//    }
+}

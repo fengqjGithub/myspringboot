@@ -1,8 +1,10 @@
 package com.joy.java.jpa.jpacontroller;
 
 import com.joy.java.jpa.jpaservice.JpaQueryService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * byJoy
  */
 @RestController
+@Api(description = "JPA查询接口")
 public class JpaQueryController {
 
 //    @PersistenceContext(unitName = "sqlserverDataSourceUnit")
@@ -30,12 +33,12 @@ public class JpaQueryController {
      *
      * @return
      */
-    @RequestMapping("/test0")
+    @RequestMapping(value ="/test0",method = RequestMethod.POST)
     public String test0() {
         return jpaQueryService.test0();
     }
 
-    @RequestMapping("/test22")
+    @RequestMapping(value ="/test22",method = RequestMethod.POST)
     public String test22() {
         return jpaQueryService.test0();
     }
@@ -47,7 +50,7 @@ public class JpaQueryController {
      */
 //    @ApiModelProperty
 //    @ApiOperation(value = "123", notes = "12312312")
-    @RequestMapping(value = "/test1")
+    @RequestMapping(value = "/test1",method = RequestMethod.POST)
     public String test1() {
         return jpaQueryService.test1();
     }
@@ -59,7 +62,7 @@ public class JpaQueryController {
      */
 //    @ApiModelProperty
 //    @ApiOperation(value = "2121", notes = "12312312")
-    @RequestMapping(value = "/test2")
+    @RequestMapping(value = "/test2",method = RequestMethod.POST)
     public String test2() {
         return jpaQueryService.test2();
     }
@@ -71,7 +74,7 @@ public class JpaQueryController {
      */
 //    @ApiModelProperty
 //    @ApiOperation(value = "2121", notes = "12312312")
-    @RequestMapping(value = "/test3")
+    @RequestMapping(value = "/test3",method = RequestMethod.POST)
     public String test3() {
         return jpaQueryService.test3();
     }
@@ -83,7 +86,7 @@ public class JpaQueryController {
      */
 //    @ApiModelProperty
 //    @ApiOperation(value = "2121", notes = "12312312")
-    @RequestMapping(value = "/test4")
+    @RequestMapping(value = "/test4",method = RequestMethod.POST)
     public String test4() {
         return jpaQueryService.test4();
     }
