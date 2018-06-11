@@ -9,6 +9,7 @@ package com.joy.java.util.excelutil;
  **/
 public class MyTest {
 //    public static void main(String[] args) {
+   /////// pee.wirteExcel(finalXcyzColum, finalXcyzName, titleSize1, xcyzDataList, "现场验证", ksccName + "现场验证统计数据");//多次执行即可生成多个sheet
 //        PoiExcelExport pee = new PoiExcelExport("E:/test.xls","sheet1");
 //        //数据
 //        List<Man> dataList = new ArrayList();

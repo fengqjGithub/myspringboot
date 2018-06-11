@@ -1,4 +1,4 @@
-package com.joy.java.util;
+package com.joy.java.common;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

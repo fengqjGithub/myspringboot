@@ -33,6 +33,7 @@ public class Swagger2Configure {
     public Docket createRestApi() {
 
         ParameterBuilder tokenPar = new ParameterBuilder();
+        //设置请求头部信息
         List<Parameter> pars = new ArrayList<Parameter>();//bf1201e1-ae78-461c-b827-3a7934135d0b
 //        tokenPar.name("tokenid").description("令牌").modelRef(new ModelRef("string")).defaultValue("123456")
 //                .parameterType("header").required(true).build();
