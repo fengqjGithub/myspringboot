@@ -25,7 +25,6 @@ public class BasisMemberServiceImpl implements BasisMemberService {
     public BasisMember getMemberById(){
         return basisMemberMapper.selectByPrimaryKey(1);
     }
-    @DS("mysqlDataSource")
     public Page<BasisMember> getAll(){
         return basisMemberMapper.selectAll();
     }

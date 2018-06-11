@@ -69,8 +69,8 @@ public class MyDruidConfig {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
-        reg.addInitParameter("loginUsername", username);
-        reg.addInitParameter("loginPassword", password);
+        reg.addInitParameter("loginUsername", "admin");
+        reg.addInitParameter("loginPassword", "123456789");
         reg.addInitParameter("logSlowSql", logSlowSql);
         return reg;
     }

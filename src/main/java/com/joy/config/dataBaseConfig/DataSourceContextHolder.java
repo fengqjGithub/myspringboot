@@ -11,7 +11,7 @@ public class DataSourceContextHolder {
     /**
      * 默认数据源
      */
-    public static final String DEFAULT_DS = "datasource1";
+    public static final String DEFAULT_DS = "sqlserverDataSource";
 
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<>();
 

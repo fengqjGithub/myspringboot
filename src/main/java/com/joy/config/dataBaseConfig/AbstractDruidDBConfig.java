@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContextException;
 import org.springframework.context.annotation.Configuration;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 /**
  * @Project: myspringboot
@@ -17,7 +18,7 @@ import java.sql.SQLException;
  * @Description: TODO
  **/
 @Configuration
-public abstract class AbstractDruidDBConfig {
+ abstract class AbstractDruidDBConfig {
     private Logger logger = LoggerFactory.getLogger(AbstractDruidDBConfig.class);
 
     @Value("${spring.datasource.initialSize}")
@@ -56,7 +57,7 @@ public abstract class AbstractDruidDBConfig {
     @Value("${spring.datasource.logSlowSql}")
     private String logSlowSql;
 
-    public DruidDataSource createDataSource(String driverClassName, String url, String username, String password) {
+    public DataSource createDataSource(String driverClassName, String url, String username, String password) {
         if (StringUtils.isEmpty(url)) {
             throw new ApplicationContextException("Database connection pool is not configured correctly");
         }

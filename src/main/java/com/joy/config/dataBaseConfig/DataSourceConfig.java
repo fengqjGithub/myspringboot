@@ -1,6 +1,7 @@
 package com.joy.config.dataBaseConfig;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +10,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,19 +48,21 @@ public class DataSourceConfig extends AbstractDruidDBConfig {
     private String driverClassName2;
 
     //数据源1
-    @Primary
-    @Bean(name = "sqlserverDataSource", initMethod = "init", destroyMethod = "close")
-    public DruidDataSource sqlserverDataSource() {
-        System.out.println(driverClassName1 + "---------driverClassName1-----------" + dbUrl1);
-        return super.createDataSource(driverClassName1, dbUrl1, username1, password1);
-    }
-
-    //数据源2
-    @Bean(name = "mysqlDataSource", initMethod = "init", destroyMethod = "close")
-    public DruidDataSource mysqlDataSource() {
+    @Bean(name = "mysqlDataSource")
+    @Qualifier("mysqlDataSource")
+    public DataSource mysqlDataSource() {
         System.out.println(driverClassName2 + "---------driverClassName2-----------" + dbUrl2);
         return super.createDataSource(driverClassName2, dbUrl2, username2, password2);
     }
+
+    @Primary
+    @Bean(name = "sqlserverDataSource")
+    @Qualifier("sqlserverDataSource")
+    public DataSource sqlserverDataSource() {
+        System.out.println(driverClassName1 + "---------driverClassName1-----------" + dbUrl1);
+        return super.createDataSource(driverClassName1, dbUrl1, username1, password1);
+    }
+    //数据源2
 
     /**
      * 动态数据源: 通过AOP在不同数据源之间动态切换
@@ -68,7 +70,7 @@ public class DataSourceConfig extends AbstractDruidDBConfig {
      * @return
      */
     @Bean(name = "dynamicDataSource")
-    public DataSource dynamicDataSource() {
+    public DynamicDataSource dynamicDataSource() {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         // 默认数据源
         dynamicDataSource.setDefaultTargetDataSource(sqlserverDataSource());

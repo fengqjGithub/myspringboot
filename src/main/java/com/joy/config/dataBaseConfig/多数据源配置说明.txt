@@ -1,0 +1,8 @@
+配置多数据源过程记录:
+       本来想着把datasource注入给AbstractRoutingDataSource，然后由spring统一管理，再用注解手动切换，
+       由AutoConfig自动配置，但是貌似是因为在boot2.0里面删除了AutoConfig，所有的切换后的配置都得手动添加，
+       一开始的误区走了两天多，也跟了spring代码，connection切换都没问题，后来想着是不是因为jpa+mybatis的关系，
+       所以单独先配置了mybatis的多数据源，发现也不行。再之后手动配置sqlsessionfactory试了一下就行了，无语，
+       还以为boot智能到变态呢，其实还是需要很多手动配置的东西，虽然配置起来很灵活。
+
+单数据源只用DruidConfig类就行了，而且jpa和mybatis都不需要更多的配置，除非需要特殊设置。

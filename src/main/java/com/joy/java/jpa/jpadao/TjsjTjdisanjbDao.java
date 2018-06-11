@@ -17,7 +17,7 @@ import java.util.List;
  * @ReturnType: 
  * @Exception   
  **/
-public interface TjsjTjdisanjbDao extends JpaSpecificationExecutor<TjsjTjdisanjbEn>, JpaRepository<TjsjTjdisanjbEn, Integer> {
+public interface TjsjTjdisanjbDao extends JpaRepository<TjsjTjdisanjbEn, Integer>,JpaSpecificationExecutor<TjsjTjdisanjbEn>  {
 
 
     @Query(value = "select *,ROW_NUMBER() OVER(order by tjdisanjb_tjlblxno) AS RN  FROM tjsj_tjdisanjb_v " +

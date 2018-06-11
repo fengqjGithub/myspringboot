@@ -54,10 +54,8 @@ public class JpaQueryService {
     TjsjTjdierjbDao tjsjTjdierjbDao;
     @Resource
     TjsjTjdiyijbDao tjsjTjdiyijbDao;
-
-//    @PersistenceContext
-//    EntityManager em;
-
+    @PersistenceContext
+    EntityManager em;
     public String test0() {
         List<BasisMemberEn> list = basisMemberDao.findAll();
         for (BasisMemberEn en : list) {
@@ -65,12 +63,10 @@ public class JpaQueryService {
         }
         return JSON.toJSONString(list);
     }
-
     public String test1() {
         List<TestBean> s = testBeanDao.tests11();
         return JSON.toJSONString(s);
     }
-
     public String test2() {
         final Map<String, String> para = new HashMap<>();
         List<TjsjTjdierjbEn> resList = tjsjTjdierjbDao.findAll(new Specification<TjsjTjdierjbEn>() {
@@ -98,7 +94,6 @@ public class JpaQueryService {
         });
         return JSON.toJSONString(resList);
     }
-
     public String test3() {
         final Map<String, String> para = new HashMap<>();
         String pageTemp = para.get("page");
@@ -139,25 +134,25 @@ public class JpaQueryService {
         }, pageable);
         return JSON.toJSONString(beans.getContent());
     }
-//    public String test4() {
-//        String bkksSql = "SELECT newid() as id, ks_ksno,ks_xm,ks_bmxh,ks_zkzh,ks_zjno,ks_xb,ks_lxrdh,ks_xjno,ks_sfks,kskscc_zw AS ks_zw,km_no,km_mc, "
-//                + " kscc_no,kscc_mc,kscc_kssj,kscc_jssj,kcss_no,kcss_mc,kcss_sx,kc_no,kc_mc,bmd_no,bmd_mc,ks_cjbj "
-//                + " FROM bk_ks LEFT JOIN bk_kskscc ON bk_kskscc.kskscc_ksid = bk_ks.ksid "
-//                + " LEFT JOIN zd_km ON bk_kskscc.kskscc_kmid = zd_km.kmid "
-//                + " LEFT JOIN zd_kscc ON zd_km.km_ksccid = zd_kscc.ksccid "
-//                + " LEFT JOIN qy_kcss ON bk_kskscc.kskscc_kcssid = qy_kcss.kcssid "
-//                + " LEFT JOIN qy_kc ON bk_kskscc.kskscc_kcid = qy_kc.kcid AND qy_kc.kcid = qy_kcss.kcss_kcid "
-//                + " LEFT JOIN qy_bmd ON qy_bmd.bmdid = bk_ks.ks_bmdid  where 1=1 ";
-//        Query query = em.createNativeQuery(bkksSql);
-//        query.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
-//        List<BkksBean> dataList = query.getResultList();
-//        List<BkksBean> list;
-//        try {
-//            list =JSONUtils.fromJsonArray(JSONUtils.beanToJson(dataList), BkksBean.class);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return e.getMessage();
-//        }
-//        return JSON.toJSONString(list);
-//    }
+    public String test4() {
+        String bkksSql = "SELECT newid() as id, ks_ksno,ks_xm,ks_bmxh,ks_zkzh,ks_zjno,ks_xb,ks_lxrdh,ks_xjno,ks_sfks,kskscc_zw AS ks_zw,km_no,km_mc, "
+                + " kscc_no,kscc_mc,kscc_kssj,kscc_jssj,kcss_no,kcss_mc,kcss_sx,kc_no,kc_mc,bmd_no,bmd_mc,ks_cjbj "
+                + " FROM bk_ks LEFT JOIN bk_kskscc ON bk_kskscc.kskscc_ksid = bk_ks.ksid "
+                + " LEFT JOIN zd_km ON bk_kskscc.kskscc_kmid = zd_km.kmid "
+                + " LEFT JOIN zd_kscc ON zd_km.km_ksccid = zd_kscc.ksccid "
+                + " LEFT JOIN qy_kcss ON bk_kskscc.kskscc_kcssid = qy_kcss.kcssid "
+                + " LEFT JOIN qy_kc ON bk_kskscc.kskscc_kcid = qy_kc.kcid AND qy_kc.kcid = qy_kcss.kcss_kcid "
+                + " LEFT JOIN qy_bmd ON qy_bmd.bmdid = bk_ks.ks_bmdid  where 1=1 ";
+        Query query = em.createNativeQuery(bkksSql);
+        query.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+        List<BkksBean> dataList = query.getResultList();
+        List<BkksBean> list;
+        try {
+            list = JSONUtils.fromJsonArray(JSONUtils.beanToJson(dataList), BkksBean.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return e.getMessage();
+        }
+        return JSON.toJSONString(list);
+    }
 }

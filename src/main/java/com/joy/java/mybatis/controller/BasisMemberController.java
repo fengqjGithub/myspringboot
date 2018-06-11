@@ -23,7 +23,8 @@ public class BasisMemberController {
     private BasisMemberService basisMemberService;
     @Autowired
     BkKsMapper bkKsMapper;
-    @DS("sqlserverDataSource")
+
+    @DS("mysqlDataSource")
     @RequestMapping("/getOne")
     public String getOne() {
         return JSON.toJSONString(basisMemberService.getMemberById());
@@ -31,9 +32,15 @@ public class BasisMemberController {
     /**
      * 分页
      */
-
-    @RequestMapping("/getAll")
-    public String getAll() {
+    @DS("mysqlDataSource")
+    @RequestMapping("/getAllmysqlDataSource")
+    public String getAllmysqlDataSource() {
+        PageHelper.startPage(0,4);
+        return JSON.toJSONString(basisMemberService.getAll());
+    }
+    @DS("sqlserverDataSource")
+    @RequestMapping("/getAllsqlserverDataSource")
+    public String getAllsqlserverDataSource() {
         PageHelper.startPage(0,4);
         return JSON.toJSONString(basisMemberService.getAll());
     }

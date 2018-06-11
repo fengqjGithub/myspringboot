@@ -1,6 +1,5 @@
 package com.joy.java.jpa.jpacontroller;
 
-import com.joy.config.dataBaseConfig.DS;
 import com.joy.java.jpa.jpaservice.JpaQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JpaQueryController {
 
+//    @PersistenceContext(unitName = "sqlserverDataSourceUnit")
     @Autowired
     JpaQueryService jpaQueryService;
 
@@ -30,9 +30,13 @@ public class JpaQueryController {
      *
      * @return
      */
-    @DS("mysqlDataSource")
     @RequestMapping("/test0")
     public String test0() {
+        return jpaQueryService.test0();
+    }
+
+    @RequestMapping("/test22")
+    public String test22() {
         return jpaQueryService.test0();
     }
 
@@ -81,7 +85,6 @@ public class JpaQueryController {
 //    @ApiOperation(value = "2121", notes = "12312312")
     @RequestMapping(value = "/test4")
     public String test4() {
-//        return jpaQueryService.test4();
-        return "";
+        return jpaQueryService.test4();
     }
 }

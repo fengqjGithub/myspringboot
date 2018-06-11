@@ -1,5 +1,6 @@
 package com.joy.java.mybatis.service;
 
+import com.joy.config.dataBaseConfig.DS;
 import com.joy.java.mybatis.model.BasisMember;
 
 import java.util.List;
@@ -12,6 +13,6 @@ import java.util.List;
  * @Description: TODO
  **/
 public interface BasisMemberService {
-    BasisMember getMemberById();
     List<BasisMember> getAll();
+    BasisMember getMemberById();
 }

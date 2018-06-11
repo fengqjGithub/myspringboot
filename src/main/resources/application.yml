@@ -33,10 +33,15 @@ spring:
         driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
       db1:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost:3306/zbzichan?useUnicode=true&characterEncoding=utf-8&useSSL=false
-        username: root
-        password: user
-        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:sqlserver://localhost;DatabaseName=hngx20180416
+        username: sa
+        password: 123456
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://localhost:3306/zbzichan?useUnicode=true&characterEncoding=utf-8&useSSL=false
+#        username: root
+#        password: user
+#        driverClassName: com.mysql.jdbc.Driver
     http:
       encoding:
         force: true
@@ -46,7 +51,7 @@ spring:
        # Redis数据库索引（默认为0）
       database: 0
       # Redis服务器地址
-      host: 10.2.18.204
+      host: localhost
       # Redis服务器连接端口
       port: 6379
       # Redis服务器连接密码（默认为空）
@@ -65,7 +70,7 @@ spring:
       timeout: 10000
     #activemq控制台端口 8161
     activemq:
-      broker-url: tcp://10.2.18.204:61616
+      broker-url: tcp://localhost:61616
       user: admin
       password: admin
       in-memory: true
@@ -84,9 +89,9 @@ spring:
     data:
         mongodb:
           database: bootmongodb
-          uri: mongodb://10.2.18.204:27017
+          uri: mongodb://localhost:27017
 logging:
-  config: classpath:logback.xml
+  config: classpath:logback-spring.xml
   path: F:/logs
   level:
     com.joy.java.mybatis.mapper: debug
