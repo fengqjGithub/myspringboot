@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joy.java.mybatis.mapper.BasisMenuMapper">
+  <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.BasisMenu">
+    <id column="menuid" jdbcType="INTEGER" property="menuid" />
+    <result column="menu_no" jdbcType="VARCHAR" property="menuNo" />
+    <result column="menu_appsid" jdbcType="INTEGER" property="menuAppsid" />
+    <result column="menu_modid" jdbcType="INTEGER" property="menuModid" />
+    <result column="menu_lbno" jdbcType="INTEGER" property="menuLbno" />
+    <result column="menu_wym" jdbcType="VARCHAR" property="menuWym" />
+    <result column="menu_mc" jdbcType="VARCHAR" property="menuMc" />
+    <result column="menu_parentid" jdbcType="INTEGER" property="menuParentid" />
+    <result column="menu_level" jdbcType="INTEGER" property="menuLevel" />
+    <result column="menu_group" jdbcType="INTEGER" property="menuGroup" />
+    <result column="menu_isiframe" jdbcType="INTEGER" property="menuIsiframe" />
+    <result column="menu_xsfs" jdbcType="INTEGER" property="menuXsfs" />
+    <result column="menu_helpurl" jdbcType="VARCHAR" property="menuHelpurl" />
+    <result column="menu_tooltip" jdbcType="VARCHAR" property="menuTooltip" />
+    <result column="menu_desktop" jdbcType="VARCHAR" property="menuDesktop" />
+    <result column="menu_disabled" jdbcType="VARCHAR" property="menuDisabled" />
+    <result column="menu_order" jdbcType="INTEGER" property="menuOrder" />
+    <result column="menu_bz" jdbcType="VARCHAR" property="menuBz" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menuid, menu_no, menu_appsid, menu_modid, menu_lbno, menu_wym, menu_mc, menu_parentid, 
+    menu_level, menu_group, menu_isiframe, menu_xsfs, menu_helpurl, menu_tooltip, menu_desktop, 
+    menu_disabled, menu_order, menu_bz
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from basis_menu
+    where menuid = #{menuid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from basis_menu
+    where menuid = #{menuid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.joy.java.mybatis.model.BasisMenu">
+    insert into basis_menu (menuid, menu_no, menu_appsid, 
+      menu_modid, menu_lbno, menu_wym, 
+      menu_mc, menu_parentid, menu_level, 
+      menu_group, menu_isiframe, menu_xsfs, 
+      menu_helpurl, menu_tooltip, menu_desktop, 
+      menu_disabled, menu_order, menu_bz
+      )
+    values (#{menuid,jdbcType=INTEGER}, #{menuNo,jdbcType=VARCHAR}, #{menuAppsid,jdbcType=INTEGER}, 
+      #{menuModid,jdbcType=INTEGER}, #{menuLbno,jdbcType=INTEGER}, #{menuWym,jdbcType=VARCHAR}, 
+      #{menuMc,jdbcType=VARCHAR}, #{menuParentid,jdbcType=INTEGER}, #{menuLevel,jdbcType=INTEGER}, 
+      #{menuGroup,jdbcType=INTEGER}, #{menuIsiframe,jdbcType=INTEGER}, #{menuXsfs,jdbcType=INTEGER}, 
+      #{menuHelpurl,jdbcType=VARCHAR}, #{menuTooltip,jdbcType=VARCHAR}, #{menuDesktop,jdbcType=VARCHAR}, 
+      #{menuDisabled,jdbcType=VARCHAR}, #{menuOrder,jdbcType=INTEGER}, #{menuBz,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.BasisMenu">
+    insert into basis_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuid != null">
+        menuid,
+      </if>
+      <if test="menuNo != null">
+        menu_no,
+      </if>
+      <if test="menuAppsid != null">
+        menu_appsid,
+      </if>
+      <if test="menuModid != null">
+        menu_modid,
+      </if>
+      <if test="menuLbno != null">
+        menu_lbno,
+      </if>
+      <if test="menuWym != null">
+        menu_wym,
+      </if>
+      <if test="menuMc != null">
+        menu_mc,
+      </if>
+      <if test="menuParentid != null">
+        menu_parentid,
+      </if>
+      <if test="menuLevel != null">
+        menu_level,
+      </if>
+      <if test="menuGroup != null">
+        menu_group,
+      </if>
+      <if test="menuIsiframe != null">
+        menu_isiframe,
+      </if>
+      <if test="menuXsfs != null">
+        menu_xsfs,
+      </if>
+      <if test="menuHelpurl != null">
+        menu_helpurl,
+      </if>
+      <if test="menuTooltip != null">
+        menu_tooltip,
+      </if>
+      <if test="menuDesktop != null">
+        menu_desktop,
+      </if>
+      <if test="menuDisabled != null">
+        menu_disabled,
+      </if>
+      <if test="menuOrder != null">
+        menu_order,
+      </if>
+      <if test="menuBz != null">
+        menu_bz,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuid != null">
+        #{menuid,jdbcType=INTEGER},
+      </if>
+      <if test="menuNo != null">
+        #{menuNo,jdbcType=VARCHAR},
+      </if>
+      <if test="menuAppsid != null">
+        #{menuAppsid,jdbcType=INTEGER},
+      </if>
+      <if test="menuModid != null">
+        #{menuModid,jdbcType=INTEGER},
+      </if>
+      <if test="menuLbno != null">
+        #{menuLbno,jdbcType=INTEGER},
+      </if>
+      <if test="menuWym != null">
+        #{menuWym,jdbcType=VARCHAR},
+      </if>
+      <if test="menuMc != null">
+        #{menuMc,jdbcType=VARCHAR},
+      </if>
+      <if test="menuParentid != null">
+        #{menuParentid,jdbcType=INTEGER},
+      </if>
+      <if test="menuLevel != null">
+        #{menuLevel,jdbcType=INTEGER},
+      </if>
+      <if test="menuGroup != null">
+        #{menuGroup,jdbcType=INTEGER},
+      </if>
+      <if test="menuIsiframe != null">
+        #{menuIsiframe,jdbcType=INTEGER},
+      </if>
+      <if test="menuXsfs != null">
+        #{menuXsfs,jdbcType=INTEGER},
+      </if>
+      <if test="menuHelpurl != null">
+        #{menuHelpurl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuTooltip != null">
+        #{menuTooltip,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDesktop != null">
+        #{menuDesktop,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDisabled != null">
+        #{menuDisabled,jdbcType=VARCHAR},
+      </if>
+      <if test="menuOrder != null">
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="menuBz != null">
+        #{menuBz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.BasisMenu">
+    update basis_menu
+    <set>
+      <if test="menuNo != null">
+        menu_no = #{menuNo,jdbcType=VARCHAR},
+      </if>
+      <if test="menuAppsid != null">
+        menu_appsid = #{menuAppsid,jdbcType=INTEGER},
+      </if>
+      <if test="menuModid != null">
+        menu_modid = #{menuModid,jdbcType=INTEGER},
+      </if>
+      <if test="menuLbno != null">
+        menu_lbno = #{menuLbno,jdbcType=INTEGER},
+      </if>
+      <if test="menuWym != null">
+        menu_wym = #{menuWym,jdbcType=VARCHAR},
+      </if>
+      <if test="menuMc != null">
+        menu_mc = #{menuMc,jdbcType=VARCHAR},
+      </if>
+      <if test="menuParentid != null">
+        menu_parentid = #{menuParentid,jdbcType=INTEGER},
+      </if>
+      <if test="menuLevel != null">
+        menu_level = #{menuLevel,jdbcType=INTEGER},
+      </if>
+      <if test="menuGroup != null">
+        menu_group = #{menuGroup,jdbcType=INTEGER},
+      </if>
+      <if test="menuIsiframe != null">
+        menu_isiframe = #{menuIsiframe,jdbcType=INTEGER},
+      </if>
+      <if test="menuXsfs != null">
+        menu_xsfs = #{menuXsfs,jdbcType=INTEGER},
+      </if>
+      <if test="menuHelpurl != null">
+        menu_helpurl = #{menuHelpurl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuTooltip != null">
+        menu_tooltip = #{menuTooltip,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDesktop != null">
+        menu_desktop = #{menuDesktop,jdbcType=VARCHAR},
+      </if>
+      <if test="menuDisabled != null">
+        menu_disabled = #{menuDisabled,jdbcType=VARCHAR},
+      </if>
+      <if test="menuOrder != null">
+        menu_order = #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="menuBz != null">
+        menu_bz = #{menuBz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where menuid = #{menuid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.BasisMenu">
+    update basis_menu
+    set menu_no = #{menuNo,jdbcType=VARCHAR},
+      menu_appsid = #{menuAppsid,jdbcType=INTEGER},
+      menu_modid = #{menuModid,jdbcType=INTEGER},
+      menu_lbno = #{menuLbno,jdbcType=INTEGER},
+      menu_wym = #{menuWym,jdbcType=VARCHAR},
+      menu_mc = #{menuMc,jdbcType=VARCHAR},
+      menu_parentid = #{menuParentid,jdbcType=INTEGER},
+      menu_level = #{menuLevel,jdbcType=INTEGER},
+      menu_group = #{menuGroup,jdbcType=INTEGER},
+      menu_isiframe = #{menuIsiframe,jdbcType=INTEGER},
+      menu_xsfs = #{menuXsfs,jdbcType=INTEGER},
+      menu_helpurl = #{menuHelpurl,jdbcType=VARCHAR},
+      menu_tooltip = #{menuTooltip,jdbcType=VARCHAR},
+      menu_desktop = #{menuDesktop,jdbcType=VARCHAR},
+      menu_disabled = #{menuDisabled,jdbcType=VARCHAR},
+      menu_order = #{menuOrder,jdbcType=INTEGER},
+      menu_bz = #{menuBz,jdbcType=VARCHAR}
+    where menuid = #{menuid,jdbcType=INTEGER}
+  </update>
+</mapper>

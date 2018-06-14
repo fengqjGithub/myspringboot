@@ -2,6 +2,9 @@ package com.joy.java.jpa.jpacontroller;
 
 import com.joy.java.jpa.jpaservice.JpaQueryService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +30,13 @@ public class JpaQueryController {
 //    @PersistenceContext(unitName = "sqlserverDataSourceUnit")
     @Autowired
     JpaQueryService jpaQueryService;
+
+//    @ApiOperation(value = "登录验证", response = SessionBean.class, notes = "备注")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "userName", value = "用户名", paramType = "query", dataType = "String", required = true),
+//            @ApiImplicitParam(name = "password", value = "密码", paramType = "query", dataType = "String", required = true)
+//    })
+//    @RequestMapping(value = "/loginMenu", method = RequestMethod.POST)
 
     /**
      * jpa原生查询

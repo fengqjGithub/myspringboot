@@ -19,14 +19,14 @@ import java.util.List;
  * @Description: TODO
  **/
 public class DecryptDatFile {
-    public static void main(String[] args) {
-
-        List<String> fileList = ZipUtil.getFileListByType("E:\\项目资料\\bats", new ArrayList<String>(), "attlog.dat");
-//        String url="E:\\项目资料\\淇滨小学考点指纹仪原始数据\\log_7913933221945\\20171224162600_7913933221945_attlog.dat";
-        for(String url: fileList){
-            DecryptMyfile(url);
-        }
-    }
+//    public static void main(String[] args) {
+//
+//        List<String> fileList = ZipUtil.getFileListByType("E:\\项目资料\\bats", new ArrayList<String>(), "attlog.dat");
+////        String url="E:\\项目资料\\淇滨小学考点指纹仪原始数据\\log_7913933221945\\20171224162600_7913933221945_attlog.dat";
+//        for(String url: fileList){
+//            DecryptMyfile(url);
+//        }
+//    }
 
     public static String DecryptMyfile(String fileUrl) {
         String cfile = "";//解压后的文件名

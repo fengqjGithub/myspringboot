@@ -33,6 +33,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * ComponentScan 自动扫描并加载符合条件的组件
  */
 /**
+ * 在用这个项目打war包的时候发现用tomcat7打包，serverlt容器初始化失败，换成tomcat8成功
  * exclude = {DataSourceAutoConfiguration.class}
  * 禁用springboot默认加载的application.properties单数据源配置
  */
