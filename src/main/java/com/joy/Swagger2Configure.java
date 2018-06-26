@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @Package: com.joy
  * @Class: Swagger2Configure
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/6/11 12:39
  * @Description: TODO
  * @Param: param

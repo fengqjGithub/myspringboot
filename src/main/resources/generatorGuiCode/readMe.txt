@@ -1,0 +1,1 @@
+generator生成代码的GUI，地址在https://github.com/zouzg/mybatis-generator-gui

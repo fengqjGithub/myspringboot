@@ -5,7 +5,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 /**
  * @Project: myspringboot
  * @Package: com.joy.config.dataBaseConfig
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-31 18:31
  * @Description: TODO
  **/

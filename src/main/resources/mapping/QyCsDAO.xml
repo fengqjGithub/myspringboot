@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.joy.java.mybatis.mapper.QyCsDAO">
+  <resultMap id="BaseResultMap" type="com.joy.java.mybatis.model.QyCs">
+    <id column="csid" jdbcType="INTEGER" property="csid" />
+    <result column="cs_sfid" jdbcType="INTEGER" property="csSfid" />
+    <result column="cs_no" jdbcType="VARCHAR" property="csNo" />
+    <result column="cs_mc" jdbcType="VARCHAR" property="csMc" />
+    <result column="cs_jc" jdbcType="VARCHAR" property="csJc" />
+    <result column="cs_ctqh" jdbcType="VARCHAR" property="csCtqh" />
+    <result column="cs_yzbm" jdbcType="VARCHAR" property="csYzbm" />
+    <result column="cs_sx" jdbcType="VARCHAR" property="csSx" />
+    <result column="cs_order" jdbcType="INTEGER" property="csOrder" />
+    <result column="cs_bz" jdbcType="VARCHAR" property="csBz" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    csid, cs_sfid, cs_no, cs_mc, cs_jc, cs_ctqh, cs_yzbm, cs_sx, cs_order, cs_bz
+  </sql>
+  <select id="selectByExample" parameterType="com.joy.java.mybatis.model.QyCsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hngx20180423..qy_cs
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from hngx20180423..qy_cs
+    where csid = #{csid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from hngx20180423..qy_cs
+    where csid = #{csid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.joy.java.mybatis.model.QyCsExample">
+    delete from hngx20180423..qy_cs
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.joy.java.mybatis.model.QyCs">
+    <selectKey keyProperty="csid" order="AFTER" resultType="java.lang.Integer">
+      SQL_Server
+    </selectKey>
+    insert into hngx20180423..qy_cs (cs_sfid, cs_no, cs_mc, 
+      cs_jc, cs_ctqh, cs_yzbm, 
+      cs_sx, cs_order, cs_bz
+      )
+    values (#{csSfid,jdbcType=INTEGER}, #{csNo,jdbcType=VARCHAR}, #{csMc,jdbcType=VARCHAR}, 
+      #{csJc,jdbcType=VARCHAR}, #{csCtqh,jdbcType=VARCHAR}, #{csYzbm,jdbcType=VARCHAR}, 
+      #{csSx,jdbcType=VARCHAR}, #{csOrder,jdbcType=INTEGER}, #{csBz,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.joy.java.mybatis.model.QyCs">
+    <selectKey keyProperty="csid" order="AFTER" resultType="java.lang.Integer">
+      SQL_Server
+    </selectKey>
+    insert into hngx20180423..qy_cs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="csSfid != null">
+        cs_sfid,
+      </if>
+      <if test="csNo != null">
+        cs_no,
+      </if>
+      <if test="csMc != null">
+        cs_mc,
+      </if>
+      <if test="csJc != null">
+        cs_jc,
+      </if>
+      <if test="csCtqh != null">
+        cs_ctqh,
+      </if>
+      <if test="csYzbm != null">
+        cs_yzbm,
+      </if>
+      <if test="csSx != null">
+        cs_sx,
+      </if>
+      <if test="csOrder != null">
+        cs_order,
+      </if>
+      <if test="csBz != null">
+        cs_bz,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="csSfid != null">
+        #{csSfid,jdbcType=INTEGER},
+      </if>
+      <if test="csNo != null">
+        #{csNo,jdbcType=VARCHAR},
+      </if>
+      <if test="csMc != null">
+        #{csMc,jdbcType=VARCHAR},
+      </if>
+      <if test="csJc != null">
+        #{csJc,jdbcType=VARCHAR},
+      </if>
+      <if test="csCtqh != null">
+        #{csCtqh,jdbcType=VARCHAR},
+      </if>
+      <if test="csYzbm != null">
+        #{csYzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="csSx != null">
+        #{csSx,jdbcType=VARCHAR},
+      </if>
+      <if test="csOrder != null">
+        #{csOrder,jdbcType=INTEGER},
+      </if>
+      <if test="csBz != null">
+        #{csBz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.joy.java.mybatis.model.QyCsExample" resultType="java.lang.Long">
+    select count(*) from hngx20180423..qy_cs
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update hngx20180423..qy_cs
+    <set>
+      <if test="record.csid != null">
+        csid = #{record.csid,jdbcType=INTEGER},
+      </if>
+      <if test="record.csSfid != null">
+        cs_sfid = #{record.csSfid,jdbcType=INTEGER},
+      </if>
+      <if test="record.csNo != null">
+        cs_no = #{record.csNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csMc != null">
+        cs_mc = #{record.csMc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csJc != null">
+        cs_jc = #{record.csJc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csCtqh != null">
+        cs_ctqh = #{record.csCtqh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csYzbm != null">
+        cs_yzbm = #{record.csYzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csSx != null">
+        cs_sx = #{record.csSx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.csOrder != null">
+        cs_order = #{record.csOrder,jdbcType=INTEGER},
+      </if>
+      <if test="record.csBz != null">
+        cs_bz = #{record.csBz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update hngx20180423..qy_cs
+    set csid = #{record.csid,jdbcType=INTEGER},
+      cs_sfid = #{record.csSfid,jdbcType=INTEGER},
+      cs_no = #{record.csNo,jdbcType=VARCHAR},
+      cs_mc = #{record.csMc,jdbcType=VARCHAR},
+      cs_jc = #{record.csJc,jdbcType=VARCHAR},
+      cs_ctqh = #{record.csCtqh,jdbcType=VARCHAR},
+      cs_yzbm = #{record.csYzbm,jdbcType=VARCHAR},
+      cs_sx = #{record.csSx,jdbcType=VARCHAR},
+      cs_order = #{record.csOrder,jdbcType=INTEGER},
+      cs_bz = #{record.csBz,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.joy.java.mybatis.model.QyCs">
+    update hngx20180423..qy_cs
+    <set>
+      <if test="csSfid != null">
+        cs_sfid = #{csSfid,jdbcType=INTEGER},
+      </if>
+      <if test="csNo != null">
+        cs_no = #{csNo,jdbcType=VARCHAR},
+      </if>
+      <if test="csMc != null">
+        cs_mc = #{csMc,jdbcType=VARCHAR},
+      </if>
+      <if test="csJc != null">
+        cs_jc = #{csJc,jdbcType=VARCHAR},
+      </if>
+      <if test="csCtqh != null">
+        cs_ctqh = #{csCtqh,jdbcType=VARCHAR},
+      </if>
+      <if test="csYzbm != null">
+        cs_yzbm = #{csYzbm,jdbcType=VARCHAR},
+      </if>
+      <if test="csSx != null">
+        cs_sx = #{csSx,jdbcType=VARCHAR},
+      </if>
+      <if test="csOrder != null">
+        cs_order = #{csOrder,jdbcType=INTEGER},
+      </if>
+      <if test="csBz != null">
+        cs_bz = #{csBz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where csid = #{csid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.joy.java.mybatis.model.QyCs">
+    update hngx20180423..qy_cs
+    set cs_sfid = #{csSfid,jdbcType=INTEGER},
+      cs_no = #{csNo,jdbcType=VARCHAR},
+      cs_mc = #{csMc,jdbcType=VARCHAR},
+      cs_jc = #{csJc,jdbcType=VARCHAR},
+      cs_ctqh = #{csCtqh,jdbcType=VARCHAR},
+      cs_yzbm = #{csYzbm,jdbcType=VARCHAR},
+      cs_sx = #{csSx,jdbcType=VARCHAR},
+      cs_order = #{csOrder,jdbcType=INTEGER},
+      cs_bz = #{csBz,jdbcType=VARCHAR}
+    where csid = #{csid,jdbcType=INTEGER}
+  </update>
+</mapper>

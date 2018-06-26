@@ -10,7 +10,7 @@ import java.io.InputStream;
  * 本类只是为了测试缓存使用，保证类编译不出错
  * @Project: myspringboot
  * @Package: com.joy.java.mybatis
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-31 14:52
  * @Description: TODO
  **/

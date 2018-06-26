@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 /**
  * @Package: com.joy.java.mongodb.dao
  * @Class: LogDao
- * @Author: 冯前进
+ * @Author: Joy
  * @date: 2018/6/11 15:29
  * @Description: TODO
  * @Param: param

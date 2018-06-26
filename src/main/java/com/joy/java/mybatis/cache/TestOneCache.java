@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 /**
  * @Project: myspringboot
  * @Package: com.joy.java.mybatis
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-31 14:48
  * @Description: TODO
  **/

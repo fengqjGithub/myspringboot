@@ -6,7 +6,7 @@ import com.joy.java.mybatis.model.QyKc;
 /**
  * @Project: myspringboot
  * @Package: com.joy.java.mybatis.bean
- * @Author: 冯前进
+ * @Author: Joy
  * @Date: 2018-05-30 18:00
  * @Description: TODO
  **/
